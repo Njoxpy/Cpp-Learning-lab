@@ -1,5 +1,7 @@
 # C++ Learning Lab
 
+![C++ Logo](/assets/C++.png)
+
 Welcome to the C++ Learning Lab repository!
 
 This repository is specifically designed to support university students in Tanzania who want to learn and gain experience in C++ programming. The primary focus is providing resources, materials, and tutorials in both English and Swahili languages to enhance accessibility for learners.
