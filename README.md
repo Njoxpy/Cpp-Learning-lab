@@ -30,6 +30,6 @@ This repository is licensed under the GNU GENERAL PUBLIC LICENSE.Feel free to us
 
 ## Contact
 
-If you have any questions, suggestions, or encounter any issues, please feel free to reach out to us via email at email protected
+If you have any questions, suggestions, or encounter any issues, please feel free to reach me via [twitter](https://twitter.com/njox16)
 
 Happy learning and happy coding!
