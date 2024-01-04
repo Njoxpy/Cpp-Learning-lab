@@ -13,6 +13,8 @@
 - [Memory Management Best Practices](#memory-management-best-practices)
 - [Common Pitfalls](#common-pitfalls)
 
+<a name="top"></a>
+
 ## Introduction
 
 ## Memory Allocation
@@ -36,3 +38,4 @@
 ## Memory Management Best Practices
 
 ## Common Pitfalls
+[⬆️ Return to Top](#top)
