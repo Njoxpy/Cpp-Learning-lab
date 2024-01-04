@@ -20,6 +20,8 @@
 - [Best Practices](#best-practices)
 - [Common Pitfalls](#common-pitfalls)
 
+<a name="top"></a>
+
 ## Introduction
 ![Classification of Data Structure](/assets/ClassificationofDataStructure-660x347.jpg)
 ## Arrays
@@ -57,3 +59,4 @@
 ## Best Practices
 
 ## Common Pitfalls
+[⬆️ Return to Top](#top)
