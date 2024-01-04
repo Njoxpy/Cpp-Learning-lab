@@ -10,9 +10,21 @@
 - [Array Manipulation Functions](#array-manipulation-functions)
 - [Common Pitfalls](#common-pitfalls)
 
+<a name="top"></a>
+
 ### Introduction
 
 ### Declaration
+```cpp
+// basic structure of the C++ program
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    return 0;
+}
+```
 
 ### Initialization
 
@@ -27,3 +39,7 @@
 ### Array Manipulation Functions
 
 ### Common Pitfalls
+[⬆️ Return to Top](#top)
+
+
+
