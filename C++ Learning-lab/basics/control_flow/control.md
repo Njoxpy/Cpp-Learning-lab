@@ -11,6 +11,8 @@
 - [break and continue Statements](#break-and-continue-statements)
 - [Common Mistakes](#common-mistakes)
 
+<a name="top"></a>
+
 ## Introduction
 
 ## if Statement
@@ -30,3 +32,4 @@
 ## break and continue Statements
 
 ## Common Mistakes
+[⬆️ Return to Top](#top)
