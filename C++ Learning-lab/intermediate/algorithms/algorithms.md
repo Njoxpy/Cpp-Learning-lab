@@ -29,6 +29,7 @@
 - [Best Practices](#best-practices)
 - [Common Pitfalls](#common-pitfalls)
 
+<a name="top"></a>
 ## Introduction
 
 ## Algorithm Analysis
@@ -84,3 +85,4 @@
 ## Best Practices
 
 ## Common Pitfalls
+[⬆️ Return to Top](#top)
