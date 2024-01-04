@@ -1,30 +1,31 @@
-[Introduction](#introduction)
+- [Introduction](#introduction)
+<a name="top"></a>
+- [Function Declaration](#function-declaration)
 
-[Function Declaration](#function-declaration)
+- [Function Definition](#function-definition)
 
-[Function Definition](#function-definition)
+- [Function Call](#function-call)
 
-[Function Call](#function-call)
+- [Function Arguments](#function-arguments)
 
-[Function Arguments](#function-arguments)
+- [Pass By Value Vs Pass By Reference](#pass-by-value-vs-pass-by-reference)
 
-[Pass By Value Vs Pass By Reference](#pass-by-value-vs-pass-by-reference)
+- [Return Values](#return-values)
 
-[Return Values](#return-values)
+- [Function Overloading](#function-overloading)
 
-[Function Overloading](#function-overloading)
+- [Inline Functions](#inline-functions)
 
-[Inline Functions](#inline-functions)
+- [Recursive Functions](#recursive-functions)
 
-[Recursive Functions](#recursive-functions)
+- [Function Pointers](#function-pointers)
 
-[Function Pointers](#function-pointers)
+- [Lambda Expressions](#lambda-expressions)
 
-[Lambda Expressions](#lambda-expressions)
+- [Errors](#errors)
 
-[Errors](#errors)
+- [Best Practices for Functions](#best-practices-for-functions)
 
-[Best Practices for Functions](#best-practices-for-functions)
 
 ## Introduction
 
@@ -53,3 +54,4 @@
 ## Pass By Value Vs Pass By Reference
 
 ## Errors
+[⬆️ Return to Top](#top)
