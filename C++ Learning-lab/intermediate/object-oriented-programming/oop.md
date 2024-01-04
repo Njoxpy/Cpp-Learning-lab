@@ -14,6 +14,8 @@
 - [Best Practices](#best-practices)
 - [Common Pitfalls](#common-pitfalls)
 
+<a name="top"></a>
+
 ## Introduction to OOP
 
 ## Classes and Objects
@@ -39,3 +41,4 @@
 ## Best Practices
 
 ## Common Pitfalls
+[⬆️ Return to Top](#top)
