@@ -20,24 +20,24 @@
 
 # Pointers
 
-[Introduction](#introduction)
+- [Introduction](#introduction)
 
-[Declaration](#declaration)
+- [Declaration](#declaration)
 
-[Constant Pointers](#constantpointers)
+- [Constant Pointers](#constantpointers)
 
-[Pointers Best Practices](#bestpracticesforpointers)
+- [Pointers Best Practices](#bestpracticesforpointers)
 
-[Dynamic Memory Allocation](#dynamic-memory-alocation)
+- [Dynamic Memory Allocation](#dynamic-memory-alocation)
 
-[Advantages and Disadvtages Of Pointers](#advantages-and-disadvantages-of-pointers)
+- [Advantages and Disadvtages Of Pointers](#advantages-and-disadvantages-of-pointers)
 
-[Array and Pointers Relationship](#relationship-between-pointers-and-arrays)
+- [Array and Pointers Relationship](#relationship-between-pointers-and-arrays)
 
-[Pointer Arithmetic](#pointer-arithmetic)
+- [Pointer Arithmetic](#pointer-arithmetic)
 
-[Smart Pointers](#smart-pointers)
-
+- [Smart Pointers](#smart-pointers)
+<a name="top"></a>
 ## Introduction
 
 ## Declaration
@@ -57,3 +57,4 @@
 ## Relationship Between Pointers and Arrays
 
 ## Smart Pointers
+[⬆️ Return to Top](#top)
