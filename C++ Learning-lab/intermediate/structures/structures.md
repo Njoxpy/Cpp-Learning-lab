@@ -3,6 +3,7 @@
 - [Structures](#structures)
 - [Introduction to Structures](#introduction-to-structures)
 - [Declaring Structures](#declaring-structures)
+- [Arrays And Structs](#arrays-and-structs)
 - [Accessing Structure Members](#accessing-structure-members)
 - [Unpacking Structures](#unpacking-structures)
 - [Nested Structures](#nested-structures)
@@ -94,7 +95,27 @@ int main(){
   return 0;
 }
 ```
+- Kuna namna nyingine ya kutengeneza instance ya struct yako 
+```cpp
+#include <iostream>
 
+using namespace std;
+
+struct Customers
+{
+    int id = 13;
+    string name;
+    string email;
+    bool isRegistered;
+} customer;
+
+int main(){
+
+  customer.id = 13;
+  customer.name = "Njox";
+  return 0;
+}
+```
 - Hakikisha pale unavyopass values by default ni muhimu kuzingatia values zipi zimekuwa assigned na values zipi hazijakuwa assigned.
 - Accessing structure members kwenye program yetu tutaumia dot (.) operator ila kwan za inabidi kucreate a instance ya class yetu ambyo ni object.Anza na jina la struct yako iliyokuwa created ikifuatiwa na object ambayo unatka iwe created.
 
@@ -133,6 +154,23 @@ customer.id = 221;
 customer.name = "Godbless Nyagawa";
 customer.email = "godblessnyagawa@gmail.com";
 ```
+
+## Arrays And Structs
+
+| Feature          | Arrays                            | Structs                             |
+|------------------|-----------------------------------|-------------------------------------|
+| **Definition**   | Collection of elements of the same type, accessed by index. | User-defined data type that can hold elements of different types, accessed by name. |
+| **Data Type**     | Homogeneous (all elements must be of the same type). | Heterogeneous (elements can be of different types). |
+| **Size**          | Fixed size once declared.          | Size can vary, as it's determined by the sum of the sizes of its members. |
+| **Memory Layout** | Contiguous memory allocation.      | Members are stored in separate memory locations. |
+| **Access**        | Access elements using index (e.g., `arr[0]`). | Access members using their names (e.g., `structVar.member`). |
+| **Initialization**| Can be initialized using an initializer list. | Members can be initialized individually or using an initializer list. |
+| **Usage**         | Useful for storing and processing a collection of homogeneous elements. | Suitable for grouping related data with different data types. |
+| **Example**       | `int numbers[5] = {1, 2, 3, 4, 5};` | 
+|                  | `struct Point { int x; int y; };`  |
+|                  | `Point p = {10, 20};`              |
+
+   
 
 ## Unpacking Structures
 

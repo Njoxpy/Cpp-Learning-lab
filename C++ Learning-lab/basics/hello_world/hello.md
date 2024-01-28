@@ -18,8 +18,49 @@
 <a name="top"></a>
 ## Introduction to C++
 ## IDEs
-## First C++ Program
-- make sure to explain the whole structure of C++ Program from include up to the return
+# C++ IDEs Guide
+
+## Introduction
+
+Welcome to the world of C++ development! To make your coding journey smoother, let's explore some popular Integrated Development Environments (IDEs) tailored for C++.
+
+## 1. Visual Studio Code
+
+[Visual Studio Code](https://code.visualstudio.com/) is a lightweight, open-source IDE with robust C++ support. It offers a variety of extensions for enhanced functionality, making it a versatile choice for C++ developers.
+
+
+**Installation:**
+1. Install Visual Studio Code from [here](https://code.visualstudio.com/).
+2. Install the C/C++ extension by Microsoft from the Extensions view (`Ctrl + Shift + X`).
+
+## 2. Code::Blocks
+
+[Code::Blocks](http://www.codeblocks.org/) is a free, open-source IDE with a user-friendly interface. It supports multiple compilers and offers a customizable development environment.
+
+**Installation:**
+1. Download and install Code::Blocks from [here](http://www.codeblocks.org/).
+2. Follow the installation instructions provided on the website.
+
+## 3. CLion
+
+[CLion](https://www.jetbrains.com/clion/) by JetBrains is a powerful IDE designed for C++ development. It offers intelligent code completion, navigation, and built-in tools for testing and profiling.
+
+**Installation:**
+1. Download and install CLion from [here](https://www.jetbrains.com/clion/).
+2. Follow the installation instructions for your operating system.
+
+## 4. Eclipse IDE for C/C++
+
+[Eclipse IDE](https://www.eclipse.org/) is a widely used platform with a dedicated version for C/C++ development. It provides a rich set of features and supports various plugins for additional functionality.
+
+**Installation:**
+1. Download and install Eclipse IDE for C/C++ from [here](https://www.eclipse.org/downloads/).
+2. Follow the installation instructions based on your operating system.
+
+## Conclusion
+
+Choose an IDE that aligns with your preferences and workflow. Experiment with different options to find the one that best suits your C++ development needs. Happy coding!
+
 
 ```cpp
 #include <iostream>
