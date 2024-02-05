@@ -2,6 +2,7 @@
 
 - [Introduction to OOP](#introduction-to-oop)
 - [Classes and Objects](#classes-and-objects)
+- [Acess Modifiers](#acess-modifiers)
 - [Encapsulation](#encapsulation)
 - [Inheritance](#inheritance)
 - [Polymorphism](#polymorphism)
@@ -80,7 +81,7 @@ then click ok, baada ya hapo utakutana na file limekuwa created kama hili.
 
 Baada ya hapo utakuta file mbili zimekuwa created kwenye program yetu ambapo file la kwanza linaitwa `Rectangle.h` ambalo ndio header file na file la pili ni `Rectangle.cpp`, header file linakuwa na features za rectangle class na pia la `Rectangle.cpp` ni file ambalo litakuwa na actual implementation la `Rectangle.cpp` file.
 
-- Hapa kwenye header file na actual file ni kama kwenye upande wa Remote controller,remote controller inakuwa na uwezo wa kufanya operesheni mablimbali ila ili uweze kufanya operesheni hizo kama kuongeza sauti au kuplayy video na vitu vingine hauhitaji kujua ndani ya hiyo remote infanyaje kazi basi hapo ni sawa katika program yetu,kwamba class yetu itakuwa na header file ila actual implementation ili utweze kupunguza complexity zinakuwa ndani ya class file `Rectangle.cpp`.
+- Hapa kwenye header file na actual file ni kama kwenye upande wa Remote controller,remote controller inakuwa na uwezo wa kufanya operesheni mbalimbali ila ili uweze kufanya operesheni hizo kama kuongeza sauti au kuplay video na vitu vingine hauhitaji kujua ndani ya hiyo remote inafanyaje kazi basi hapo ni sawa katika program yetu,kwamba class yetu itakuwa na header file na file la actual implementation ili kupunguza complexity ndani ya class file `Rectangle.cpp`.
 
 - Hivyo ndani ya `Rectangle.h`, tunahitaji kudefine properties na methods za hiyo class yako katika program yetu.Rectangle itakuwa na features kama `height` na `width` , yaani upana na urefu na pia itakuw na methods kama `draw()` na `getArea()`
 
@@ -106,7 +107,7 @@ class Rectangle {
 
 ![attributes](/assets/attributes.PNG)
 
-- Actual implementation ya code yetu itakuwa ndani ya file na `Rectangle.cpp`, katika `Rectangle.cpp` ndio tunaweza kufanya implementation ya rectangle class.Kufanya implementation ya draw class tutanza na jina la function  kisha fanya qualification ya function kwa kutumia jina la class ikifuatiwa na `scope resolution operator` `::`.
+- Actual implementation ya code yetu itakuwa ndani ya file na `Rectangle.cpp`, katika `Rectangle.cpp` ndio tunaweza kufanya implementation ya rectangle class.Kufanya implementation ya draw class tutaanza Rectangle class ikifuatiwa `scope resolution operator` `: :` ikifuatiwa na jina la function au property yako.
 
 - Ni muhimu kujua kwamba kuna utofauti wa header files kama zimetoka kwenye standard library zitakuwa ni na `< >` kama iostream ila kama ya kwetu hiyo itakuwa ndani ya quotes `" "`.
 
@@ -129,19 +130,133 @@ int Rectangle::getArea() {
 ```
 
 - Ili tuweze kutengeneza rectangle object katika file letu kwanza inabidi header file liwe katika `main.cpp`
-`#include "Rectangle.h"`, na pia file linalotakiwa kuw a included ni header file na sio `Rectangle.cpp` file.Hivyo ndani ya main.cpp file ndiyo tutafanya tuatumia class ya Rectangle kutengeneza object kama `Rectnagle rectangle` na ili kuweza kupata methods za instance amabyo ni object rectangle tutatumia dot operator `rectangle.`.
+`#include "Rectangle.h"`, na pia file linalotakiwa kuwa included ni header file na sio `Rectangle.cpp` file.Hivyo ndani ya main.cpp file ndiyo tutatumia class ya Rectangle kutengeneza object kama `Rectangle rectangle` na ili kuweza kupata methods za instance amabyo ni object rectangle tutatumia dot operator `rectangle.`.
 
 ```cpp
 // main.cpp file
 #include "Rectangle.h"
 
 int main(){
-    Rectangle r;
-    r.draw();
+    Rectangle rectangle;
+    rectangle.draw();
     
     return 0;
 }
 ```
+
+Kwenye upande wa structures ukifanya declaration ya members wako huwa wanakuwa public by default ila kwa upande wa class hapana, kwa hiyo kama kwenye rectangle class yako utafanya initialization ya value ya object kama width by default utapata error kwanini? `class members huw wanakuwa private by default kwa hiyo inabidi ubadilishe kuwa public kama unataka iwe public`
+
+```cpp
+// main.cpp file
+#include "Rectangle.h"
+
+int main(){
+    Rectangle rectangle;
+    rectangle.draw();
+    
+    rectangle.width = 10;
+    // error because the member variable rectangle.widh is private
+    return 0;
+}
+```
+
+Inabidi ubadili kuwa public kwahiyo ndani ya header file ndio unabadili ndani ya class declaration.
+
+```cpp
+#ifndef SRC_RECTANGLE_H
+#define SRC_RECTANGLE_H
+
+
+class Rectangle {
+public:
+    // properties
+    int width;
+    int height;
+    
+    // methods
+    void draw();
+    int getArea();
+};
+
+
+#endif //SRC_RECTANGLE_H
+
+```
+
+- Baada ya member variables kufanywa public basi unaweza ukabadili value zake katika program yako.
+
+```cpp
+// main.cpp file
+#include "Rectangle.h"
+
+int main()
+{
+    Rectangle rectangle;
+    rectangle.draw();
+
+    rectangle.width = 10;
+    rectangle.height = 20;
+
+    rectangle.getArea();
+
+    return 0;
+}
+```
+
+## Acess Modifiers
+
+- Katika C++, "access modifiers" ni maneno muhimu yanayosaidia kudhibiti jinsi class members (vitu kama vile sifa(attributes) na njia)(methods) wanavyoweza kufikiwa kutoka nje ya class. Kuna "public", "private", na "protected". Hizi zinasaidia kutekeleza dhana ya "encapsulation," moja ya misingi ya programu katika OOP. Hapa kuna maelezo fupi:
+
+  1. *Public*
+    Wanachama wa "public" wa darasa hufanya kuwa interface yake kwa ulimwengu wa nje.
+    -Members (Wanachama) ambao ni public wanaweza kufikiwa hata wakiwa nje ya class, na mda wowote
+
+    ```cpp
+    class Example {
+
+public:
+    int publicVar;
+    void publicMethod() {
+        // code here
+    }
+};
+    ```
+
+    2. *Private*
+
+    Members ambao wamekwa kama private hawawezi kufikiwa kutoka nje ya class.
+    Members ambao ni private huficha sifa na maelezo ya utekelezaji.
+    Members ambao ni private wanaweza kuwa accessed ndai ya hiyo class tu.
+
+    ```cpp
+    class Example {
+private:
+    int privateVar;
+    void privateMethod() {
+        // code here
+    }
+};
+    ```
+
+    3. *Protected*:
+    Wanachama waliotangazwa kama "protected" ni kama "private," lakini wanaweza kufikiwa katika class  zilizojengwa juu yake.
+    Members wa "protected" huruhusu class iliyojengwa yaliyojengwa kurithi(inherit) na kufikia wanachama(class members) hao.
+    Members wa "protected" hutumika unapotaka kuzuia upatikanaji kutoka nje ya (class)darasa, lakini kuruhusu upatikanaji kwa madarasa yaliyojengwa juu yake
+
+    ```cpp
+    class Base {
+protected:
+    int protectedVar;
+    void protectedMethod() {
+        // code here
+    }
+};
+
+class Derived : public Base {
+    // Can access protectedVar and protectedMethod here
+};
+
+    ```
 
 ## Encapsulation
 
@@ -162,6 +277,32 @@ int main(){
 ## Exceptions in OOP
 
 ## Best Practices
+
+- Ndio nzuri ni kuweka public methods kwanza zikifuatiwa na private methods
+
+```cpp
+/*
+In this header file we are going to declare the features of the rectangle class
+*/
+
+#ifndef SRC_RECTANGLE_H
+#define SRC_RECTANGLE_H
+
+class Rectangle
+{
+public:
+    int width;
+    int height;
+    void draw();
+    int getArea();
+
+private:
+    // private methods and variables
+};
+
+#endif // SRC_RECTANGLE_H
+
+```
 
 ## Common Pitfalls
 
