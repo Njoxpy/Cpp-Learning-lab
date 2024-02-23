@@ -1,51 +1,40 @@
 - [Introduction](#introduction)
-  <a name="top"></a>
 - [Function Declaration](#function-declaration)
-
 - [Function Types](#function-types)
-
 - [Function Definition](#function-definition)
-
 - [Function Call](#function-call)
-
 - [Function Parameters](#function-parameters)
-
   - [Default Parameters](#default-parameters)
   - [Multiple Parameters](#multiple-parameters)
-
 - [Function Arguments](#function-arguments)
-
 - [Pass By Value Vs Pass By Reference](#pass-by-value-vs-pass-by-reference)
-
+- [Local And Global Variables](#local-and-global-variables)
+- [Declaring Functions](#declaring-functions)
+- [Organizing Functions In Files](#organizing-functions-in-files)
 - [Return Values](#return-values)
-
 - [Function Overloading](#function-overloading)
-
 - [Inline Functions](#inline-functions)
-
 - [Recursive Functions](#recursive-functions)
-
 - [Function Pointers](#function-pointers)
-
 - [Lambda Expressions](#lambda-expressions)
-
 - [Errors](#errors)
-
 - [Best Practices for Functions](#best-practices-for-functions)
+
+<a name="top"></a>
 
 ## Introduction
 
-- Functions zinakuwezesha kuweza kugawanyisha programu yako(code zako) katika vipande amabvyo ni rahisi kumaintain na kuwezesha code zako kuwa readable maintainable na hata kuwa resisable yaani zinaktumika tena katika programu zingine.
+- Functions zinakuwezesha kuweza kugawanyisha programu yako(code zako) katika vipande amabvyo ni rahisi kumaintain na kuwezesha code zako kuwa readable maintainable na hata kuwa reusable yaani zinaktumika tena katika programu zingine.
 
 ## Function Declaration
 
-- Function declaration: Inaspecify jina la function yako, return type, parameters kama zitakuepo kutokana na uwepo wa function inatoa taarifa kwa compiler yako kwanza kuna function na kuna aina nyingi za function katika `C++`
+- Function declaration: Inaspecify jina la function yako, return type, parameters kama zitakuepo kutokana na uwepo wa function inatoa taarifa kwa compiler yako kwanza kuna function na kuna aina nyingi za function katika `C++`, Ili kuweza kutengeneza function yako utaanza na return type kisha ikifuatiwa na jina la function yako kisha mabano na ndani ya mabano yako kutakuwa na paremeters baaada ya hapo itafuatiwa na mabano singasinga na nadni ya mabano hayo ndio function body kwamba vitu vyote ambavyo unataka function yako ifanye ndio vitakuwa ndani ya function yako hiyo.
 
 ## Function Types
 
 - Hi ni moja kati ya section muhimu sana katika `C++` ila bado kuwa machanhanyiko mkubwa sana hapa ni muhimu kujua je kuna ian ngapi za function katika program yako na kwa namna gani zinafanya kazi
 
-1. **Void functions**: Ni function ambazo hazi rudishi thamani(value).Zinatumika kuandika program ambazo hazirudishi jibu(result). Mfano
+1. **Void functions**: Ni function ambazo hazi rudishi thamani(value).Zinatumika kuandika program ambazo hazirudishi jibu(result), au tunaweza tukasema ni function ambazo return type yake ni void yaani tupu hairudishi kitu chochote. Mfano
 
 ```cpp
 void greet() {
@@ -53,7 +42,7 @@ void greet() {
 }
 ```
 
-2.**Functions with Parameters**:Ni aina za function ambazo zinachukua arguments au parameters ambazo zitatumika kufanya kazi(operation) ndani ya program yako. Mfano
+2.**Functions with Parameters**:Ni aina za function ambazo zinachukua parameters ambazo zitatumika kufanya kazi(operation) ndani ya program yako. Mfano: Tunaweza tukawa na function yetu inaitwa kujumlisha ambayo inachukua parameters mbili ambazo ni namba ya kwaza(a) na namba ya mbili(b). Kama function sio void ina maana kwamba itarudisha value fulani kwenye program yako hivyo unaweza ukawa na function ambayo inarudisha data type fulani mfano wake ni return type int, return type float , return type bool na hata pia double.
 
 ```cpp
 int jumlisha(int a, int b) {
@@ -61,7 +50,7 @@ int jumlisha(int a, int b) {
 }
 ```
 
-3. **Functions with Return Value:**: Function zenye return value, ni aina ya function ambzo zinarudisha jibu katika program yako baada ya kufanya kazi fulani ya programu yako. Mfano
+3.**Functions with Return Value:**: Function zenye return value, ni aina ya function ambzo zinarudisha jibu katika program yako baada ya kufanya kazi fulani ya programu yako. Mfano
 
 ```cpp
 int square(int num) {
@@ -69,7 +58,7 @@ int square(int num) {
 }
 ```
 
-4. **Recursive Functions:**: Ni aina za function ambazo znajiita zenyewe either katika directly way au indirectly way Mfano:
+4.**Recursive Functions:**: Ni aina za function ambazo znajiita zenyewe either katika directly way au indirectly way Mfano:
 
 ```cpp
 int factorial(int n) {
@@ -217,6 +206,239 @@ void printSum(int a, int b) {
 
 - Katika mfano huu , function ya printSum inachukua integer parameters ambazo ni mbili (int a na int b).Pale ambapo function iatitwa katika main fucntion ikiwa na arguments za x na y, itatoa jibu la sum ya value mbili.
 
+## Local And Global Variables
+
+***Local Variable***
+
+- Pale ambapo unafanya declaration ya variable yotyote kwenye program yako inaweza ikawa local kama unaweza kupata access ndani ya hiyo variable tu ambayo ipo.Mfano:
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int number = 100;
+    return 0;
+}
+```
+
+Kupitia mfano hapo juu unaweza ukapata acess ya integer number kwenye scope tu ambayo integer yako ipo na hiyo variable ikiwa ni loca; variables eneo ambalo variable yako ipo kwenye program yako ndio tunaita `local scope`.Integer number ipo kwenye main function tu nje ya hapo haitapata value yako,Mfano tunataka kuapata value ya number nje ya main function:
+
+    ## Global Variable
+
+- Global variable ni ile variable yako ambayo unaweza pata access yake ukiwa sehemu yoyote kwenye program yako pia ni variable ambayo inakuwa declared nje ya function yoyote au class.Global variables zina global scope, maana kwamba unaweza pata access ya ukiwa sehemu yoyote ya program yako,pamoja na siurce files kama zinakuwa declared.
+
+Mfano:
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+// Global variable declaration
+int globalVar = 10;
+
+int main() {
+    // Accessing globalVar inside the main function
+    cout << "Value of globalVar inside main: " << globalVar << endl;
+
+    // Modifying globalVar
+    globalVar = 20;
+
+    // Accessing globalVar after modification
+    cout << "Value of globalVar after modification: " << globalVar << endl;
+
+    return 0;
+}
+
+```
+
+Katika mfano huu, `globalVar` imekuwa declared nje ya function yoyote,ambacho imefanya imekuwa global variable.Inaweza kuwa accessed na kuwa modfied pia ndani tya main function bila tatizo lolote.
+
+## Declaring Functions
+
+- Declaring function i moja kati ya case nzuri sana inayotmika kwenye upande wa local and global variables,Mfano Vipi endapo tutafanya declaration ya function yetu baada ya main function:
+
+```cpp
+// working with functions
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    greetUser();
+    return 0;
+}
+
+void greetUser()
+{
+    cout << "Welcome";
+}
+```
+
+Output tunayopata ni hii
+
+```cpp
+error: 'greetUser' was not declared in this scope
+    9 |     greetUser();
+      |     ^~~~~~~~~
+```
+
+Tumepata compilation function kwamba function yetu haipo visible kwa main function kwa hiyo solution yake ni kwamba always fanya declaration ya function kabla ya main function.Solution zipo mbili ya kwanza ni kufanya declaration ya `greetUser()` function kabla ya main function na kutokana na hii ni sawa na kuambia compiler kwamba kuna function fulani ipo katika program yangu ila declaratio yake ipo hapa juu,Mfano:
+
+```cpp
+// working with functions
+
+#include <iostream>
+
+using namespace std;
+
+// declare your function,make sure to terminate
+// function declaration(function prototype)
+void greetUser();
+
+int main()
+{
+    greetUser();
+    return 0;
+}
+
+// function definition
+void greetUser()
+{
+    cout << "Welcome";
+}
+```
+
+Solution ya pili unafanya normal declaration ya function kwamba function yako yote inakuwa ndani nje ya main function.
+
+```cpp
+// working with functions
+
+#include <iostream>
+
+using namespace std;
+
+void greetUser()
+{
+    cout << "Welcome";
+}
+
+int main()
+{
+    greetUser();
+    return 0;
+}
+
+```
+
+Function declaration ni sawa na function prototype.
+
+## Organizing Functions In Files
+
+- Jinsi project yako inazidi kuwa kubwa inabidi uweze kufanya organization ya projects zako katika files kwa ajili ya function zako, pia ni namna ya kufwata good practices na clean code procedures.
+
+- Project inavyokuwa code inakuwa na line of code nyingi hivyo ili uweze kupangilia project zako ziweze kukaa vizuri tutatumia files,kwamba functions nyingi katika project yako zinakuwa katika files.Kwanini Files?
+    1. Files zinakuwa ndogo na rahisi kuweza kufanya mabadiliko.
+    2. Reusability.Kama tuna function fulani katika file jingine hivyo tnaweza kutumia tena hilo file kwenye project nyingine.Kutokana na uwezo wa kutenganisha file kuwa na header file na source file(implentation file),header files zinasaidia code resusability.Unaweza ukawa na zaidi ya moja header file kutumia declaration.
+
+Ili kuweza kufanya organization ya file zako, create folder na ndani ya hilo folder tengeneza files mbili moja kwa ajili ya header files (function declaration) na file lingine kwa ajili ya implementation(implementation file) ndani ya implementation file kunakuwa na function definition.Jina la folder lako hakikisha nalipa descriptive name, `utility`
+
+```sh
+mkdir utils
+
+
+touch greet.cpp
+```
+
+Kumbuka kwa `greet.cpp` ni file kwa ajili ya actual implementation ya function yako yaani function definition, katika `main.cpp` kulikuwa na ile function definition hivyo nenda cut ile function kisha ilete kwenye `greet.cpp`.
+
+```cpp
+void greetUser()
+{
+    cout << "Welcome";
+}
+```
+
+Hakikisha unaweka header files `#include <iostream>` na pia usisahau `using namespace std;`
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+void greetUser()
+{
+    cout << "Welcome";
+}
+```
+
+Tengeneza header file kwa ajili ya function declaration, hili file huwa linakuwa na extension ya `.hpp` au `.h`
+
+```sh
+touch greet.hpp
+```
+
+Baada ya file kuwa created strcture yako ya folder la utils inabidi liwe hivi ![Utils folder](/assets/header%20files%20view.PNG)
+
+Kwenye file la greet.hpp ndio tunaweka function declaration.
+
+```cpp
+void greetUser();
+```
+
+Baada ya hapo inabidi file lako la function declaration liwe included ndani ya main.cpp file hivyo,tumia #include directive ila kwasababu tuna target header file ambalo lipo kwenye project yetu tutatumia " " double quotes kufanya reference ya file ambalo lipo kwenye hii project
+
+```cpp
+#include <iostream>
+#include "utils/greet.hpp"
+
+using namespace std;
+
+int main()
+{
+    greetUser();
+    return 0;
+}
+
+
+```
+
+Kwenye file letu lipo vizuri ila kuna tatizo kidogo endapo tukitumia header file katika sehemu mbalimbali tutapata built problems,hivyo kuapata solution ya hilo tatizo inabidi baadhi ya header files ziwe include kwenye header file.Kwa kutumia ifndef(if not defined) kupitia ifndef tunadefine new library ambayo ni UTILS na ndani ya hiyo utils tunatengeneza constant inaitwa greet.
+
+```cpp
+#ifndef UTILS_GREET
+```
+
+Baada ya hapo kama folder halijawa defined inabidi tufanye definition kwa kutumia preprocessor keyword ambayo ni define na hapao tunadefine library inaitwa utils ikiwa na constants inaitwa greet.
+
+```cpp
+#define UTILS_GREET
+```
+
+Mwishoni mwa file letu tutaweka directive ambayo inaashilia kwamba file ndio mwisho.
+
+```cpp
+#endif
+```
+
+Kijumla file letu inabidi liwe hivi.
+
+```cpp
+#ifndef UTILS_GREET
+#define UTILS_GREET
+
+void greetUser();
+
+#endif
+```
+
+Najua umewahi kuona `#indef`, `#define` na `#endif` lines,Hizo line zinaitwa `header guards` au `include guards`. Zinazuia file ambazo zina same header file ili zisiweze kuwa included mara nyingi katika same translation unit,ambapo inaweza kupelekea errors.
+
 ## Return Values
 
 ## Function Overloading
@@ -254,7 +476,7 @@ int addNumbers(int a, int b) {
 
 ```
 
-2. Not Returning Values:
+2.Not Returning Values:
 
 - For functions with a non-void return type, forgetting to return a value or not returning the correct type of value can result in unexpected behavior.
 
@@ -265,7 +487,7 @@ int addNumbers(int a, int b) {
 }
 ```
 
-3. Ignoring Function Parameters:
+3.Ignoring Function Parameters:
 
 - Ignoring or misusing function parameters can lead to logical errors in the program.
 
