@@ -4,6 +4,8 @@
 
 Welcome to the C++ Learning Lab repository!
 
+Time Spent [![wakatime](https://wakatime.com/badge/user/70af596f-17d0-4c46-81e6-ed6f4a5eeae7/project/018cc9a1-509e-4158-b492-36aad7a24e70.svg)](https://wakatime.com/badge/user/70af596f-17d0-4c46-81e6-ed6f4a5eeae7/project/018cc9a1-509e-4158-b492-36aad7a24e70)
+
 This repository is specifically designed to support university students in Tanzania who want to learn and gain experience in C++ programming. The primary focus is providing resources, materials, and tutorials in both English and Swahili languages to enhance accessibility for learners.
 
 ## Contents
