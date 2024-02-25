@@ -5,22 +5,22 @@
 
 ## Introduction
 
-- Je ni kitu gani unaweza ukafanya na C++, C++ lugha mama ambayo lugha nyingi zimetoka kwenye C++,C++ inatumika katika kufanya vitu vifuatavyo
+- Je ni kitu gani unaweza ukafanya na C++, C++ lugha mama ambayo lugha nyingi zimetoka kwenye C++,C++ inatumika katika kufanya vitu vifuatavyo.
 
 1. Buidling High performanvce apllication.C++ inatumika katika kutengeneza applications amabzo zinakuwa kwa ajili ya kufanya high performance task katika sehemu mbambali inaweza ikawa katika kampuni au hata katika taasisi mbambali za binfasi na hata zile za serikali.
 
 2. Operating System. C++ inatumika katika kutengeneza operating system ambazo zitatumika katika sehemu mbali mbali, mfano wa operating syetm ambazo zimetengenezwa kupitia C++, mfano wa operating syetm ambazo zimekuwa built kwa kutumia C++ kna `macos` pia unaweeza kupitia hii article kupata uelewa mzuri zaidi [operating system built using C++](https://jabroo.blogspot.com/2012/08/c-plus-plus-applications-list.html)
 
-3. Video Games, Kupitia C++ unaweza ukatengeneza games pia ila inahitaji uwe na na uelewa wa C++ basic na sintaksia zake kupitia hapa utaweza kuelewa vizuri nq ndio maana nimeandika hii repository kwa jaili ya wewe kujifunza. Mfano SWAT, Blizzard: StarCraft, StarCraft: Brood War, Diablo I, Diablo II: Lord of Destruction, Warcraft III, World of Warcraft, Starfleet Command, Invictus, PBS's Heritage: Civilization and the Jews, Master of Orion III, CS-XII, MapleStory
+3. Video Games, Kupitia C++ unaweza ukatengeneza games pia ila inahitaji uwe na na uelewa wa C++ basic na sintaksia zake kupitia hapa utaweza kuelewa vizuri nq ndio maana nimeandika hii repository kwa jaili ya wewe kujifunza. Mfano SWAT, Blizzard: StarCraft, StarCraft: Brood War, Diablo I, Diablo II: Lord of Destruction, Warcraft III, World of Warcraft, Starfleet Command, Invictus, PBS's Heritage: Civilization and the Jews, Master of Orion III, CS-XII, MapleStory.
 
-4. Web Browsers.Kuna web browsers nyingi ambazo zimekuwa built kw kutumia C++ ila mfano baadhi ni hizi,Microsoft Internet Explorer, Google Chrome (based on chromium web browser), Mozilla Firefox, Safari, Netscape Navigator, Opera and Opera Mini
+4. Web Browsers.Kuna web browsers nyingi ambazo zimekuwa built kw kutumia C++ ila mfano baadhi ni hizi,Microsoft Internet Explorer, Google Chrome (based on chromium web browser), Mozilla Firefox, Safari, Netscape Navigator, Opera and Opera Mini.
 
 5. Servers
 
 ## Version History
 
 - Kila baada ya miaka 3 huwa kunbakuwa na version za C++ zinakuwa released na zinakuwa na features mbalimbali mwaka 2023 kulikuwa na version mpya abayo imekuwa released.
-- Kila version ya C++ huwa inakuja na maboresho na marekebisho ambayo ni muhimu na pia kutokana na kwa na watum,iaji huwa wanakuaja na majibu yao au mtazamo wao kuhusu hzio [version](https://www.cppbuzz.com/cpp-versions) mbalimbali ambazo zipio
+- Kila version ya C++ huwa inakuja na maboresho na marekebisho ambayo ni muhimu na pia kutokana na kwa na watum,iaji huwa wanakuaja na majibu yao au mtazamo wao kuhusu hzio [version](https://www.cppbuzz.com/cpp-versions) mbalimbali ambazo zipio.
 
 ![C++ Version history](/assets/Version%20history.PNG)
 
@@ -59,4 +59,4 @@
     1. C++ Syntax. Unahitaji kujua syntax za lugha ya C++ kama ambayo unajua lugha ya Kiswahili kuongeza ina maana na misamiati yake unaijua m,abayo ndio grammar sasa ili uweze kujua lugha ya CPP inabidi kujua synytax yake kwamba utaraibu wa program yako je inafanyaje kazi?
 
     2. C++ Standard Library.
-    Upamfde wa libarary kunba vitu vuiwili ambavyo ni DSA yaani data structure na na mbili ni algorithms, hivyo upande wa libraray au tunaweza tujkasema STL ni muhimu kujua hivyo vitu.
+    Upande wa libarary kunba vitu vuiwili ambavyo ni DSA yaani data structure na na mbili ni algorithms, hivyo upande wa libraray au tunaweza tujkasema STL ni muhimu kujua hivyo vitu.
