@@ -55,16 +55,6 @@ Karibu katika ulimwengu wa C++, kufanya safari yako ya coding kuwa laini na nyep
 1. Pakua na sakinisha Eclipse IDE kwa C/C++ kutoka [hapa](https://www.eclipse.org/downloads/).
 2. Fuata maagizo ya usakinishaji kulingana na mfumo wako wa uendeshaji.
 
-```cpp
-#include <iostream>
-
-using namespace std;
-
-int main(){
-    cout << "Hello World";
-}
-```
-
 ## Basic C++
 
 - Katika program yetu entry point ya program yet ni katika `int main()` ili uweze kufanya operation ya program yetu katika C++ main ni jina la function na hiyo function inabidi iwe na uwezo wa kurus=disha kitu mabayo ndio tunaita return type hivyo return type yetu inabidi iwe ni `int` yaani integer hivyo ni mubhimu kuzingation hicho na endpo utaacha hicho utapata error katika program yako, na pia kti kingine muhimu kuzinagtia ni namna main ilivyo main function inabidi iwe katika lowercase characters endapo hizo zitakuwa katika uppercase inaleta syntax error pia kwa sababu katika ugha yetu pendwa ya C++ ni case sensitive kwamba ukandika `Main` hivi na `main` ni vitu viwili tofauti kabisa katika program yetu.
