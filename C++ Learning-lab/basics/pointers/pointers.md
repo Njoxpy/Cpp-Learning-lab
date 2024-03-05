@@ -1,23 +1,3 @@
-<!-- general explanation of the pointers should be in the foloowing formats
-1. Introduction
-2. Pointer declaration
-  - Advantages and disantages of pointers
-  - the indirection operator
-  - the address operator
-  - Diagramatic representation of pointers
-3. Constant pointers
-   - Data constant
-   - pointer constant
-   - bOth pointer and data are constant
-4. Passing pointers to a function
-5.Dynamic memory allocation
-6. New
-7. Delete
-8. Pointers and arrays
-9. array Of pointers
-8.
--->
-
 # Pointers
 
 - [Introduction](#introduction)
@@ -42,13 +22,13 @@
 
 ## Introduction
 
-Pointer ni special variable ambayo inachukua address ya variable nyingine katika memory.Mfano tunaweza tukawa na variable ambayo inaitwa age na values yake ni 10 ila katika memory variable ni kama label ya variable yako ila hiyo variable ambayo ni miaka inakuwa na location yake katika memory.Hivyo tunaweza tukafanya declaration ya variable nyingine mabayo tunaita pointer ambayo inachukua address ya age variable.
+Pointer ni special variable ambayo inachukua address ya variable nyingine katika memory.Mfano tunaweza tukawa na variable ambayo inaitwa age na values yake ni 10 ila katika memory variable ni kama label ya variable yako ila hiyo variable ambayo ni age inakuwa na location yake katika memory.Hivyo tunaweza tukafanya declaration ya variable nyingine mabayo tunaita pointer ambayo inachukua address ya age variable.
 
 **Kwanini Pointers?**
 
-1. Passing Large objects: katika program yaetu tunaweza tukawa na function kwa ajili ya kufanya kazi fulani ila kama inmfanya passing ya data ambazo ni kubwa inabidi kutumia pointer ili kuweza kurahisisha kazi yako.
+1. Passing Large objects: Katika program yetu tunaweza tukawa na function kwa ajili ya kufanya kazi fulani ila kama inafanya passing ya data ambazo ni kubwa inabidi kutumia pointer ili kuweza kurahisisha kazi yako.
 
-2. Dynamic Memory Allocation. Katika sehemu ya memory management nimeeleza vizuri kuhusu [memory management](/C++%20Learning-lab/intermediate/memory_management/memory.md) na kwa kwa namna gani unaweza ukatumia kwa ajili ya kufanya memory alloaction, dynamic memory alloaction katika C++ ni pale ambapo memory yetu inakuwa adjusted kutokana na inputs ambazo zinakuwa ndani ya program yako.Kufanya dynamic memory allocation katika C++ tunatumia `new` keywpord kwa ajili ya kufanya alloaction na `delte` keyword kwa ajili ya kufanya deallocation.
+2. Dynamic Memory Allocation. Katika sehemu ya memory management nimeeleza vizuri kuhusu [memory management](/C++%20Learning-lab/intermediate/memory_management/memory.md) na kwa kwa namna gani unaweza ukatumia kwa ajili ya kufanya memory alloaction, dynamic memory alloaction katika C++ ni pale ambapo memory yetu inakuwa adjusted kutokana na inputs ambazo zinakuwa ndani ya program yako.Kufanya dynamic memory allocation katika C++ tunatumia `new` keywpord kwa ajili ya kufanya alloaction na `delete` keyword kwa ajili ya kufanya deallocation.
 
 3. Enabling Polymorphism.
 
@@ -69,15 +49,17 @@ int main(){
 }
 ```
 
-Address ya variable inakuwa katika hexadecimal number ila ukijaribu kufanya hivyo kwenye program yako utapata kitu tofauti na kile cha kwangu hapo pia endapo ukarun code yako kwa mara ya kwanza then ukarun tena kwa mara ya pili utapata address tofauti na ile ya mara ya kwanza.
+Address ya variable inakuwa katika hexadecimal number. Value ya address ya pointer yangu hapo juu inaweza ikawa inatofautiana na yako katika computer yako na pia address ya variable yako huwa inabadilika hivyo usishange kwamba mara ya kwnza ukirun msimbo wako unapata output tofauti.
 
-Kufanya declaration ya integer pointer tutuanza na int keyword ikifuatiwa na nyota yaani asterisk kisha tutaipa pointer yetu jina lako kama ambayo yunazipa variable zingine majina ila ni muhimu kuzingatyi kwa jina la pointer yako liwe meaningfull na pia liwe descriptive, hivyo integer pointer yatu tutaipa jina la ptr na tutafanya initilaization ya address ya age kutoka kwenye mfano pale juu.
+Kufanya declaration ya integer pointer tutuanza na int keyword ikifuatiwa na nyota yaani asterisk kisha tutaipa pointer yetu jina lako kama ambayo unazipa variable zingine majina ila ni muhimu kuzingatia kwa jina la pointer yako liwe meaningfull na pia liwe descriptive, hivyo integer pointer yetu tutaipa jina la ptr na tutafanya initilaization ya address ya age kutoka kwenye mfano pale juu.
 
 ```cpp
     int* ptr = &age;
 ```
 
-integer pointer yetu ina point kwa integer pointer, endapo tujijaribu kunadili intger yetu kuwa double au float kwenye age tutapata error: Mfano
+Kwenye mfano hapo juu tmefanya declaration ya pointer variable ptr ambayo ni integer ila imechukua memory location(address) ya integer age.
+
+integer pointer yetu ina point kwa integer pointer, endapo tujijaribu kubadili integer yetu kuwa double au float kwenye age tutapata error: Mfano
 
 ```cpp
 #include <iostream>
@@ -107,7 +89,7 @@ error: cannot convert 'double*' to 'int*' in initialization
 
 Hivyo kama umetengeneza integer data type na kutengeneza pointer yake ni muhimu pointer variable yako iwe sawa na ile ya data type yako.Je baada ya kufanya declaration ya pointer yako tunaweza kufa ya nini ya pointer yako?
 
-Ili kuweza kupata value au data ya pointer yako tutatumia `indirection(dereference operator)`, indirection operator inaanza na * (nyota) asterisk ikifuatiwa na jina integer pointer yako au kama umetumia float inaweza ikawa float pointer, kwa kutumia dereference operator  utapata value ya integer pointer yako.
+Ili kuweza kupata value au data(value) ya pointer yako tutatumia `indirection(dereference operator)`, indirection operator inaanza na * (nyota) asterisk ikifuatiwa na jina integer pointer yako au kama umetumia float inaweza ikawa float pointer, kwa kutumia dereference operator  utapata value ya integer pointer yako.
 
 ```cpp
     cout << *ptr; // 20
@@ -135,7 +117,7 @@ cout << age; // 30
 
 - Kwenye upande wa constants katika pointers tunaweza tukawa na vitu vitatu
 
-1. Data is Constant:Hapa daata ni constant ila pointers sio constant.Kwa hiyo unaweza ukafanya declration ya ya variable yako labda x sawa na 20 ila ukatengeneza integr pointer ambayo itapoint kwenye x integer na hiyo pointer integer yako inaweza ikawa constant hivyo endapo ukajaribu kufanya dereference ya variable yako na kuipa value kama 30 haitawezekana kwa sababu kitendo hicho ni sawa na kuwa na constant yako ambayo ni x ni sawa na kufanya const ya x kuwa 30 hivyo haitawezekana. Angalia mfano jisni ya declaration ya pointer ambayo data zake ni constant.
+1. Data is Constant: Hapa data ni constant ila pointers sio constant.Kwa hiyo unaweza ukafanya declaration ya variable yako labda x sawa na 20 ila ukatengeneza integer pointer ambayo itapoint kwenye x integer na hiyo pointer integer yako inaweza ikawa constant hivyo endapo ukajaribu kufanya dereference ya variable yako na kuipa value kama 30 haitawezekana kwa sababu kitendo hicho ni sawa na kuwa na constant yako ambayo ni x ni sawa na kufanya const ya x kuwa 30 hivyo haitawezekana. Angalia mfano jisni ya declaration ya pointer ambayo data zake ni constant.
 
 ```cpp
 #include <iostream>
@@ -187,7 +169,7 @@ error: assignment of read-only variable 'ptr'
       |     ~~~~^~~~
 ```
 
-3. Both Data na pointer ni constant.Katika situation kama hii pointer yetu inakuwa constant na pia data zetu ni constant.Hivyo hatuwezi kunadili chochote katika program yetu.
+3. Both Data na pointer ni constant.Katika situation kama hii pointer yetu inakuwa constant na pia data zetu ni constant. Hivyo hatuwezi kubadili chochote katika program yetu.
 
 ```cpp
     const int x = 20;
@@ -251,7 +233,6 @@ Pia tunaweza tukawa na integer pointer ambayo inapoint kwenye array yetu ya firs
 ## Dynamic Memory Alocation
 
 ## Pointer Arithmetic
-
 
 ## Smart Pointers
 
@@ -329,7 +310,7 @@ C:\Users\Njox\Desktop\c++\compPointers.cpp|9|error: no match for 'operator<<' (o
 ## Shared Pointers
 
 - Kutokana na uwepo wa shared pointers tunaweza kuwa na pointer mbili ambazo zina point to the same memory location,kw aupnade wa unique pointers hatuwezi kuwa na two pointers ambazo zzina point kwa same memory locationn ila tukiwa na shared pointers tunaweza tukwa na pointers ambazo zinshare the same memory location na ndio maana zinaitwa shared pointers.
-- Jinsi ya kutengeneza shared pointers ni same na jinsi y akutengeneza unique pointers kwa upnade wa syntax ila kuna baadhi ya vitu ni tofauti.
+- Jinsi ya kutengeneza shared pointers ni same na jinsi y akutengeneza unique pointers kwa upnade wa Sintaksia ila kuna baadhi ya vitu ni tofauti.
 
 ```cpp
 #include <iostream>

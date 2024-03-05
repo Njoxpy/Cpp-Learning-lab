@@ -16,6 +16,7 @@
 - [Errors](#errors)
 - [Memory Management](#memory-management)
 - [Object Oriented](#object-oriented)
+- [STL](#stl)
 - [Structures](#structures)
 - [Templates](#templates)
 - [Advanced](#advanced)
@@ -23,20 +24,6 @@
 ## Basics
 
 ## Arrays
-
-- Describe the difference in the meaning of int a[5] and the meaning of
-  a[4]. What is the meaning of the [5] and [4] in each case?
-- . Write some C++ code that will fill an array a with 20 values of type int read
-  in from the keyboard. You need not write a full program, just the code to do
-  this, but do give the declarations for the array and for all variables
-- Suppose you have the following array declaration in your program:
-  int your_array[7];
-  Also, suppose that in your implementation of C++, variables of type int use
-  2 bytes of memory. When you run your program, how much memory will
-  this array consume? Suppose that when you run your program, the system
-  assigns the memory address 1000 to the indexed variable your_array[0].
-  What will be the address of the indexed variable your_array[3]
--
 
 ## Control Flow
 
@@ -73,7 +60,6 @@
 18. Explain the differences between static and dynamic control flow in C++.
 19. Describe the role of conditional operators (`&&`, `||`, `?:`) in C++ control flow.
 20. Discuss the impact of control flow optimization techniques on the performance of C++ programs.
-
 
 ## Functions
 
@@ -179,7 +165,7 @@
 
 ## Decision Making
 
-## Operators 
+## Operators
 
 - What are comparison operators in C++?
 - Discuss the equality operator (==) in C++.
@@ -292,8 +278,6 @@
 19. What are the potential consequences of unchecked errors in C++ programs?
 20. Discuss best practices for effective error handling and debugging in C++.
 
-
-
 ## Memory Management
 
 ### Memory Management in C++
@@ -319,12 +303,34 @@
 19. What are some best practices for effective memory management in C++?
 20. Discuss the impact of memory fragmentation on C++ programs and potential mitigation strategies.
 
+## STL
+
+1. What is the difference between an STL container and an STL algorithm?
+2. Suppose that you have the following statement:
+pair<int, string> temp;
+a. Write a C++ statement that stores the pair (1, "Hello") into temp.
+b. Write a C++ statement that outputs the pair stored in temp onto the
+standard output device.
+3. Suppose that you have the following statement:
+
+```cpp
+pair<string, string> name;
+```
+
+What is the output, if any, of the following statements?
+
+```cpp
+name = make_pair("Duckey", "Donald");
+cout << name.first << " " << name.second << endl;
+```
 
 ## Object Oriented
 
 ## Structures
 
 - Given the following structure and structure variable declaration:
+
+```cpp
 struct TermAccount
 {
  double balance;
@@ -333,7 +339,10 @@ struct TermAccount
  char initial1;
  char initial2;
 };
+
 TermAccount account;
+```
+
 what is the type of each of the following? Mark any that are not correct.
 a. account.balance
 b. account.interest_rate
@@ -343,13 +352,19 @@ e. account.initial2
 f. account
 
 - Consider the following type definition:
+
+```cpp
 struct ShoeType
 {
  char style;
  double price;
 };
+```
+
 Given this structure type definition, what will be the output produced by
 the following code?
+
+```cpp
 ShoeType shoe1, shoe2;
 shoe1.style ='A';
 shoe1.price = 9.99;
@@ -357,19 +372,25 @@ cout << shoe1.style << " $" << shoe1.price << endl;
 shoe2 = shoe1;
 shoe2.price = shoe2.price/9;
 cout << shoe2.style << " $" << shoe2.price << endl;
+```
 
 - Here is an initialization of a structure type. Tell what happens with each
 initialization. Note any problems with these initializations.
+
+```cpp
 struct Date
 {
  int month;
  int day;
  int year;
 };
+```
+
 a. Date due_date = {12, 21};
 b. Date due_date = {12, 21, 20, 22};
 c. Date due_date = {12, 21, 20, 22};
 d. Date due_date = {12, 21, 22};
+
 - Write a definition for a structure type for records consisting of a person’s
 wage rate, accrued vacation (which is some whole number of days), and
 status (which is either hourly or salaried). Represent the status as one of

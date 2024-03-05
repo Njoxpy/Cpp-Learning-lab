@@ -83,7 +83,7 @@ Swali
 
 ```
 
-**Syntax of the while Statement**
+**Sintaksia of the while Statement**
 ![do and while loop](/assets/do%20and%20while%20loop.PNG)
 
 ```cpp
@@ -158,7 +158,7 @@ int main() {
 
 ```
 
-Simple Syntax
+Simple Sintaksia
 
 ```cpp
 for(counter_variable(loop variable); boolean_expression(condition), incrementation or decrementation){

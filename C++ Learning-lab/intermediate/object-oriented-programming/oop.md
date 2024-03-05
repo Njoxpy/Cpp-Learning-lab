@@ -211,7 +211,7 @@ int main()
     Wanachama wa "public" wa darasa hufanya kuwa interface yake kwa ulimwengu wa nje.
     -Members (Wanachama) ambao ni public wanaweza kufikiwa hata wakiwa nje ya class, na mda wowote
 
-    ```cpp
+```cpp
     class Example {
 
 public:
@@ -220,15 +220,14 @@ public:
         // code here
     }
 };
-    ```
+```
 
-    2. *Private*
+2.*Private*
+Members ambao wamekwa kama private hawawezi kufikiwa kutoka nje ya class.
+Members ambao ni private huficha sifa na maelezo ya utekelezaji.
+Members ambao ni private wanaweza kuwa accessed ndai ya hiyo class tu.
 
-    Members ambao wamekwa kama private hawawezi kufikiwa kutoka nje ya class.
-    Members ambao ni private huficha sifa na maelezo ya utekelezaji.
-    Members ambao ni private wanaweza kuwa accessed ndai ya hiyo class tu.
-
-    ```cpp
+```cpp
     class Example {
 private:
     int privateVar;
@@ -236,14 +235,14 @@ private:
         // code here
     }
 };
-    ```
+```
 
-    3. *Protected*:
-    Wanachama waliotangazwa kama "protected" ni kama "private," lakini wanaweza kufikiwa katika class  zilizojengwa juu yake.
-    Members wa "protected" huruhusu class iliyojengwa yaliyojengwa kurithi(inherit) na kufikia wanachama(class members) hao.
-    Members wa "protected" hutumika unapotaka kuzuia upatikanaji kutoka nje ya (class)darasa, lakini kuruhusu upatikanaji kwa madarasa yaliyojengwa juu yake
+3. *Protected*:
+Wanachama waliotangazwa kama "protected" ni kama "private," lakini wanaweza kufikiwa katika class  zilizojengwa juu yake.
+Members wa "protected" huruhusu class iliyojengwa yaliyojengwa kurithi(inherit) na kufikia wanachama(class members) hao.
+Members wa "protected" hutumika unapotaka kuzuia upatikanaji kutoka nje ya (class)darasa, lakini kuruhusu upatikanaji kwa madarasa yaliyojengwa juu yake
 
-    ```cpp
+```cpp
     class Base {
 protected:
     int protectedVar;
@@ -256,15 +255,21 @@ class Derived : public Base {
     // Can access protectedVar and protectedMethod here
 };
 
-    ```
+```
 
 ## Encapsulation
 
 ## Inheritance
 
+- Kama ambavyo binadamu tuna uwezo wa kurithi sura kwamba mtu anaweza akawa anafanana ya baba yake aua mama yake sasa kwenye upnade wa programming katika C+ kuna inheritance pia kwamba kwenye program yaetu kuna baadhi ya vitu vinarithi properties na methods ambazo zipo kwenye vitu vingine,Kwa mfano tunaweza tukawa na C++ class amabyo inaitwa `Umbo` na hilo umbo linaweza likaw na properties pamoja na methods mabalimbali sasa kutoka kwenye umbo tunaweza tengeneza umbo la `mduaala` ambalo linarithi baadhi ta tabia na methods amabzo zipo kwenye class ya umbo,pia tunaweza tengeneza umbo la triangle ambalo linarithi tabia kutoka kwa umbo class.
+
+- Kwa upande wmingine tunaweza tukawa na class ambayo inaitwa `gari` na class hiyo ya gari inaweza ikazaa gari kama `BMW` `IST` hilo gari ambazo umeona hapo zinaweza zikawa na uwezo wa au properties na methods amabazo zimetoa kwenye class ya gari na hio ndio maana na inheritance,inheritance inarahisisha mambo kwamba baadala ya kuandika program yetu upya kuhusu object fulani basi tunaamua kuchukua properties au methods ya class fulani na kuweka kwenye class nyingine ambayo imetoka kwenye parent class.
+
 ## Polymorphism
 
 ## Abstraction
+
+- Abstraction ni sawa na kusema data hding kwamba unapunguza complexity kwenye program yako.Kwa mfano kwenye remote controller ya TV yako hauhitaji kujua dani kuna nini ya hivyo vitu vyakop vinafanyaje kazi,sasa hapa ni sawa na abstraction kwamba unaficha vile vitu ambavyo sio vya msingi kwenye program yako na kuonesha vitu vyile tu ambavyo ni vya msingi kwenye program yako.Ni kama pia vile kwenye upande wa gari hauhitaji kujua gear ya gari inakoje na pia infanyaje kazi ila wao wameamua kunyesha vile vitu ambavyo ni vya muhimu tu kama uskani,sehemu na vitu vingine na hio ndio maana ya sbtraction.
 
 ## Constructors and Destructors
 
@@ -303,6 +308,10 @@ private:
 #endif // SRC_RECTANGLE_H
 
 ```
+
+- Pendelea kuandka program yako kwa njia ya object oriented ili kuweza kufanya program yako iwe rahisi na kueleweka.
+
+- Whenever we have string parameter it's best practice to declare it as reference parameter when setting value using setter.
 
 ## Common Pitfalls
 

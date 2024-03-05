@@ -162,6 +162,16 @@ int main()
 
 ## Best Practices
 
+- Use Standard Library Containers: Pale ambapo inawezekana pendelea kutumia standard library conatiners, kama vector, string juu ya raw arrays.Zipo na safety checks, dynamic resizing na pia kiujumla zipo flexible.
+
+- Initialize Arrays: Fanya initialization ya arrays zako pale ambapo unafanya declaration.Hii inasaidia kupunguza kujaribu kupata access ya memory ambayo sio initialized kwenye memory.
+
+- Use Range-Based For Loops: Unapofanya iteration kwenye arrays tumia range based loops zipo safe na pia zio clean na readable ukifananisha na traditional loops.
+
+- Use std::array for Fixed-Size Arrays:Kama unajua kwamba size ya array haitabadilika wakati wa kufanya compilation pendelea kutumia standard arrays.
+
+- Check Bounds: Angalia muda wa kufanya access ya elements zako. Kama umejaribu kupata access ya element kwenye program itakuwa shida kwenye kufanya debugging.
+
 ## Common Pitfalls
 
 - The indexes of an array always start with 0 and end with the integer that is one

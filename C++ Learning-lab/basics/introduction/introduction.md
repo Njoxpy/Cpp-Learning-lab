@@ -56,7 +56,7 @@
 
 - Ili uweze kumaster (!Joke) lugha ya C++ unahitaji kujua
 
-    1. C++ Syntax. Unahitaji kujua syntax za lugha ya C++ kama ambayo unajua lugha ya Kiswahili kuongeza ina maana na misamiati yake unaijua m,abayo ndio grammar sasa ili uweze kujua lugha ya CPP inabidi kujua synytax yake kwamba utaraibu wa program yako je inafanyaje kazi?
+    1. Sintaksia ya C++. Unahitaji kujua Sintaksia za lugha ya C++ kama ambayo unajua lugha ya Kiswahili kuongeza ina maana na misamiati yake unaijua m,abayo ndio grammar sasa ili uweze kujua lugha ya CPP inabidi kujua synytax yake kwamba utaraibu wa program yako je inafanyaje kazi?
 
     2. C++ Standard Library.
     Upande wa libarary kunba vitu vuiwili ambavyo ni DSA yaani data structure na na mbili ni algorithms, hivyo upande wa libraray au tunaweza tujkasema STL ni muhimu kujua hivyo vitu.

@@ -107,7 +107,7 @@ int addNumbers(int a, int b) {
 - Function call: Ili uweze kurun function, unahitaji kuita(call) kwa kutumia jina la function yako ikifiuatiwa na mabano (). Kma function itakuwa na parameters , unawezka na arguments (actual values) ndani ya mabano(parantheses).
 
 ```cpp
-// syntax
+// sintaksia
 function_name(argument1, argument2, ..., argumentN);
 ```
 
@@ -133,7 +133,7 @@ Hapa a na b ni integer mbili ambazo zinakuwa (zinapitishwa) passed kama argument
 - Information can be passed to functions as a parameter. Parameters act as variables inside the function.
 - Taarifa amabzo zinaweza kuwa ppased kwenye function kama parameter.Paremeter zina act kama variables ndani ya function.
 - Parameters zinakuwa specified baada ya function name ndani ya parenthesis.Unaweza ukaweka parametres nyingi uanzotaka kwenye function yako anaweza add kiasi cha function parameters ambazo unataka kwenye program yako.
-  syntax
+  sintaksia
 
 ```cpp
 void functionName(parameter1, parameter2, parameter3) {

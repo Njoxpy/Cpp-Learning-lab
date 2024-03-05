@@ -26,8 +26,8 @@
 
 ## String Declaration
 
-- Ili tuweze kufanya declaration ya string katika cpp tunatumia standard libraray ambayo inaitwa string `#include <string>` baada ya hapo fdeclaration za string yetu zitafanyika ndani ya header file yetu ila inategemeana na requirement zako je utaka kufanya string yako kuwa kama global variable au kama local variable, kwa upande wangu nitatumiamkama ni local variable, ndani ya main function syntax yake kama ni declaration utaanza na string keyword ikifuatiwa na jina la string yako, kumbuka kujua njina la string ambalo liko descriptive
-  `syntax: string jina_la_string`
+- Ili tuweze kufanya declaration ya string katika cpp tunatumia standard libraray ambayo inaitwa string `#include <string>` baada ya hapo fdeclaration za string yetu zitafanyika ndani ya header file yetu ila inategemeana na requirement zako je utaka kufanya string yako kuwa kama global variable au kama local variable, kwa upande wangu nitatumiamkama ni local variable, ndani ya main function Sintaksia yake kama ni declaration utaanza na string keyword ikifuatiwa na jina la string yako, kumbuka kujua njina la string ambalo liko descriptive
+  `Sintaksia: string jina_la_string`
 
 ```cpp
 #include <iostream>
@@ -213,7 +213,7 @@ cout << name;
 // output: Elvis Makava
 ```
 
-- Using **insert function**.Insert function inachukua parameter mbili ambapo parameter ya kwanza ni position(sehemu) ambayo hiyo string yetu inabidi ianze na parameter ya pili ni string ambayo unataka uweke.Namna nyingine kwenye code yetu hapo chini ni sawa na kusem kwamba nenda kwenye position 0 kisha weka string `Naitwa `
+- Using **insert function**.Insert function inachukua parameter mbili ambapo parameter ya kwanza ni position(sehemu) ambayo hiyo string yetu inabidi ianze na parameter ya pili ni string ambayo unataka uweke.Namna nyingine kwenye code yetu hapo chini ni sawa na kusem kwamba nenda kwenye position 0 kisha weka string `Naitwa`
 
 ```cpp
 string name = "Elvis";
@@ -221,7 +221,9 @@ name.insert(0,"Naitwa ");
 cout << name;
 // output: Naitwa Elvis
 ```
-- Using __erase function__.EInsert function inatumika kufuta character katika program yako,insert function inachukua parameters mili parameters ya kwanza ni index ambapo unataka string yako unataka ianze kufuta na parameter ya pili ni sehemu ambayo unataka parameter yako iishie ila parameter ya pili namba itakuwa excluded,Pia kwenye upande wa erase ni sawa na kusema nenda kwenye position o kisha futa charcaters 3 Ila kumbuka kwamba hizo silabu(characters) zinahesabiwa kuanzia sifuri mfano:
+
+- Using **erase function**.EInsert function inatumika kufuta character katika program yako,insert function inachukua parameters mili parameters ya kwanza ni index ambapo unataka string yako unataka ianze kufuta na parameter ya pili ni sehemu ambayo unataka parameter yako iishie ila parameter ya pili namba itakuwa excluded,Pia kwenye upande wa erase ni sawa na kusema nenda kwenye position o kisha futa charcaters 3 Ila kumbuka kwamba hizo silabu(characters) zinahesabiwa kuanzia sifuri mfano:
+
 ```cpp
 string name = "Elvis";
 name.erase(0, 3);
@@ -229,7 +231,8 @@ cout << name;
 // output: is
 ```
 
-- Using __clear function__:Erase function inatumika kufuta string yote katika program yako,hapa clear funtion haitakuwa na parameter yeyote ndani yake 
+- Using **clear function**:Erase function inatumika kufuta string yote katika program yako,hapa clear funtion haitakuwa na parameter yeyote ndani yake
+
 ```cpp
 string name = "Elvis";
 name.clear();
@@ -237,7 +240,8 @@ cout << name;
 // output: 
 ```
 
-- Using __replace function__.Replace inachukua parameters tatu ,parameter ya kwanza nisawa na kusema nenda kwenye index position (0),kisha toa herufi 2 kisha parameter ya tatu ni string yaani ambayo unataka iwe katika program yako.
+- Using **replace function**.Replace inachukua parameters tatu ,parameter ya kwanza nisawa na kusema nenda kwenye index position (0),kisha toa herufi 2 kisha parameter ya tatu ni string yaani ambayo unataka iwe katika program yako.
+
 ```cpp
 string name = "Elvis";
 name.replace(0, 2, "EL");
@@ -246,11 +250,14 @@ cout << name;
 ```
 
 ## Searching
-- Using __find function__:Kupitia find tutaweza kupata position ya content (character) ila itachukua the first charcater to occur in the string,ile ambayo ndio ya kwanza, hivyo kama tuna neno: `C++ is awesome` tukitumia find function tutapata occurance ya first chracter katika string maana kwa hapa sisi charcater tunayotafuta ni e
+
+- Using **find function**:Kupitia find tutaweza kupata position ya content (character) ila itachukua the first charcater to occur in the string,ile ambayo ndio ya kwanza, hivyo kama tuna neno: `C++ is awesome` tukitumia find function tutapata occurance ya first chracter katika string maana kwa hapa sisi charcater tunayotafuta ni e
+
 ```cpp
 string cpp="C++ is awesome";
 cout << name.find('e');
-``` 
+```
+
 ## String Input Output
 
 ## String Manipulation Functions

@@ -241,7 +241,7 @@ int myInt = myFloat;
 
 Hio conersion hapa juu inaitwa narrowing kwa sababu unajaribu kuifanya larger type ambayo ni float kwenda small data type (int).Katika situation kama hii uatona unapewa warning au error kwa sababu sio safe conversion.
 
-<!-- ## Generating Random Number
+## Generating Random Number
 
 - Random number ni mhimu palea ambapo unataka kugenerate random number katika game ambale linaweza kuwa rolling dice au pia kwenye kutengeneza guessing game katika C++.Kuna libtrary inaitwa scdlib katika C++ ndio libraray ambayo inatupa uwezo wa kutengenza random number kwa kutumia rand function katika C++
 
@@ -259,7 +259,7 @@ int main()
     cout << number;
     return 0;
 }
-``` -->
+```
 
 ## Formatting Output
 
@@ -569,6 +569,7 @@ int main()
     return 0;
 }
 ```
+
 boolapha ikishatumika kwa mara ya kwanza tu kwa kila baada ya boolean values zote zinazokuwa printed kwentye screen zitakuwa formatted Mfano:
 
 ```cpp
@@ -657,6 +658,7 @@ int main()
     return 0;
 }
 ```
+
 Endapo mtumiaji wetu ataingiza jina la kwanza na la katikati kuna baadhi ya maneno yatakatwa katika kwa sababu kwa kutumia cin itaangalia kwamba sehemu ambazo kuna space program yetu ndio inaishia hapo. program yetu je ili kuweka kusolve tatizo hilo tunfanyaje? Basi hapa tutaumia `getline()` function na getline function inachukua vitu viwili yaani parameters mbili, ya kwanza input stream `cin` na ya pili ni string variable ambayo ni `name`
 
 ```cpp

@@ -1,23 +1,33 @@
-## Mastering STL
+# Mastering STL
 
 - [Algorithms](#algorithms)
 - [Containers](#containers)
-  - [Map](#map)
-  - [Pair](#pair)
+- [Pair](#pair)
+- [Sequence Containers](#sequence-containers)
   - [Vectors](#vectors)
-  - [Queue](#queue)
+  - [List](#list)
   - [Deque](#deque)
+- [Associative Containers](#associative-containers)
   - [Set](#set)
+  - [Multiset](#multiset)
+  - [Map](#map)
+  - [Multimap](#multimap)
+
+- [Unordered Containers](#unordered-containers)
+  - [Unordered Set](#unordered-set)
+  - [Unordered Multiset](#unordered-multiset)
+  - [Unordered Map](#unordered-map)
+  - [Unordered Multimap](#unordered-multimap)
+  - [Queue](#queue)
   - [Tuple](#tuple)
 
+- [Stack](#stack)
 - [Functions](#functions)
 - [Iterators](#iterators)
 
+<a name="top"></a>
+
 ## Algorithms
-
-## Containers
-
-## Map
 
 ## Pair
 
@@ -218,7 +228,20 @@ Task yako ni kuandika program ambayo itaweza kupata value ya array kwenye index 
 
 Kujifunza vizuri namna pair zinafanya kazi pitia [project hii](/C++%20Learning-lab/projects/mastering_stl/calculator_stl.cpp)
 
+## Containers
+
+- Container zinatumika manage umbile(object) za aina fulani.STL Containers zimegawanyika katika categories nne ambazo ni:
+  - Sequence Containers(Sequantial)
+  - Associative Containers
+  - Container Adapter
+
+## Sequence Containers
+
+- Kila umbile(object) katika sequence(mfuatano) lina sehemu(position) yake maalumu,pia mpangilio wa element unakuwa maintained kwa namna ambavyo unakuwa umehifadhiwa.Mfano wa sequence containers ni vectors, list na deque.Karibia kila sequence containers zina aina moja ya operesheni ambayo unaweza ukafanya kwa ajili ya manipulation.
+
 ## Vectors
+
+- Vector zinahifadhi na pia zina manage objects zake katika dynamic array.Kwa sababu array ni random data structure,element za array unaweza ukazipata randomly.Kuweka item katiakati au mwanzoni katika array inatumia muda hususani kama array yako ni kubwa,lakini, kuweka data(item) mwishoni ni haraka zaidi. Jina la class ambayo inafanya implementation ya vector container ni vector.Jina la header file  ambalo lina class `vector` ni vector,Hivyo, kutumia vector container katika program,program lazima header file `#include <vector>` liwe included juu kabisa!
 
 - Kabla hujapitia kipande hichi hakikisha umepitia [hapa](/C++%20Learning-lab/intermediate/data_structures/), vector zipo faster zaidi ya array na ili uweze kutumia vector ni muhimu kuweka header kwa ajili ya vector yako.Ni muhimu kuzangatia kwamba kama hujui idadi ya data zako ambazo unataka ziingie katika program yako ni vizuri kutumia vector badala ya array kwanini? Ili kutumia array ni muhimu kuzingatia kwamba je ni kiasi gani cha data unataka ziwe ndani ya array yako mfano kama array yako inadata za wanafunzi mfanon wako 4 itakuwa hivi
 
@@ -238,21 +261,262 @@ Ila shida inapokuja kwenye program yetu hapo juu ni kwenye upade wa [memory mana
 
 ```cpp
     vector<int> wanafunzi;
-    vector<string> stringList;
+    vector<string> name;
 ```
 
-Hapo juu tumefanya declaration ya vector ambayo ni wanafunzi ikiwa ni ya type integer.Ili kuweza kuweka values ndani ya vector yako kuna njia mbalimbali ila kuna method inaitwa `.pushBack()` na hata pia `.emplace_back()` ndani ya mabano tunapitisha value zako.
+Hapo juu tumefanya declaration ya vector ambayo ni wanafunzi ikiwa ni ya type integer.Tumefanya declaration ya vector yetu ya kwanza inaitwa wanafunzi ya pili inaitwa name ila zote vectors zetu hazina value yeyote,kwa njia rahisi tunaweza weka value katika njia zifuatazo.
 
-- Kwenye upnade wa vector pia unaweza kutengeneza pair ya vector,
+```cpp
+    vector<string> name(5,"Njox"); // {"Njox", "Njox", "Njox", "Njox", "Njox"}
+```
+
+Hapo vector yetu name imekuwa declared ikiwa na mabano na nadni ya mabano kuna 5 na neno "Njox" hapo ni sawa kwamba vectors 5 zimekuwa initialized na zote zikiwa na value ya "Njox",ili kuweza kutengeneza copy ya vector moja kwa nyingine ni rahisi,unahitaji kufanya declaration ya vector moja(ambayo unataka ikopiwe) kisha declaration ya vector nyingine ambayo inakopi kutoka kwenye array ya kwanza,angalia mfano hapo chini!
+
+```cpp
+    vector<int> v1(5, 20);
+    vector<int> v2(v1);
+```
+
+- Sasa tumejua jinsi ya kufanya decalartion ya vector katika kipande cha sequence container,sasa ngoja tujue jinsi ya kufanya manipulation ya data ambazo zimehifadhiwa katika vector.Kufanya hivyo inabidi ujue basic operesheni zifuatazo!
+
+  - Item Insertion
+  - Item Deletion
+  - Stepping through the elements of a vector container
+- Operesheni zinatotumika kupata access ya element za vector container.
+
+1. `vectorName.at(index)`- Inarudisha element katika position ambayo imekuwa specified kutokana na index.
+
+```cpp
+    
+```
+
+2.`vectorName[index]`- Inarudisha element katika position ambayo imekuwa specified kutokana na index.
+
+```cpp
+    
+```
+
+3.`vectorName.front()`- Inarudisha element ya kwanza katika vector.
+
+```cpp
+    
+```
+
+4.`vectorName.back()`- Inarudisha element ya mwisho katika vector.
+
+```cpp
+    
+```
+
+- Vector ya kwanza imekuwa declared na kuwa initialized ikiwa na element 5 zote zikiwa na value ya 20,na vector ya pili ambayo ni v2 imekuwa declared ila imekopi values za array ya v1 katika program yako.
+
+- Ili kuweza kuweka values ndani ya vector yako kuna njia mbalimbali ila kuna method inaitwa `.pushBack()` na hata pia `.emplace_back()` ndani ya mabano tunapitisha value zako.
+
+- `push_back()` function inachofanya inaingiza value ambayo umeweka kwenye mabano kwenda kwenye value yako pia kuna `emplace_back()` nayo pia inaweka value mwishoni mwa vector yako ila kuna utofauti ulipo kati ya push_back na emplace_back,emplace_back ipo haraka ukifananisha na push_back katika vector.
+
+- Kwenye upande wa vector pia unaweza kutengeneza pair ya vector,kwa declaration ya pair yako inakuwa hivi `pair<int int>pairName` ila declaration ya vector inakuwa hivi `vector<int> vectorName` kinchobadilika ni kwamba badala ya ile data type yako ambayo ni int kwenye vector unabadili na kuweka declaration ya pair yako `vector<pair<int, int>> vec;`
+
+```cpp
+    vector<pair<int, int>> vec;
+```
+
+## List
 
 ## Queue
 
+- Queue ni sawa na stack ila utofauti wao ni kwamba queue inatumia FIFO Algorith(First In First Out),Kufanya declaration ya queue unaanza na 
+
 ## Deque
+
+- Deque ni moja kati ya sequenc containers katika STL,deque inasimama badala ya double ended queue.Deque containers zinakuwa implemented kama dynamic arrays katika namna elements zinakuwa inserted katika both ends.Deque zinaweza expand katika pande yeyote,insertion mwishoni,katikati zipo haraka.Insertion katikati zinatumia muda kwa sababu element katika katika queue zinahitaji ziwe shifted.Jina la class ambalo linafanya definition ya deque container ni deque,class deque na function ya kufanya implementation ya operesheni ambazo ziko kwenye deque object,pia zipo kwenye header file deque.Hivyo kuweza kutumia seque container katika program inabidi header file iwe included.
+
+```cpp
+#include <deque>
+```
+
+- Kufanya declaration ya qeque kwenye program yako utaanza na deque keyword ikifuatiwa na <> ndani yake kunakuwa na aina ya data nje ya <> utaweka jina la deque yako.
+
+```cpp
+    deque<int> dq;
+```
+
+## Associative Containers
 
 ## Set
 
+## Multiset
+
+## Map
+
+## Multimap
+
+## Unordered Containers
+
+## Unordered Set
+
+## Unordered Multiset
+
+## Unordered Map
+
+## Unordered Multimap
+
 ## Tuple
+
+## Stack
+
+- Stack inafanya kazi kwa kutumia algorithm ya LIFO(Last in First Out),kwamba element ambayo itakuwa ya mwisho kuwa added ndio itakuwa ya kwanza kutolewa.Declaration ya stack unaanza na stack keyword kisha <> ndani ya <> inakaa data type kisha nje ya <> inafuata jina la stack yako,usisahau kuweka header yako `##include <stack>`.
+
+```cpp
+    stack<int> st;
+```
+
+- Ili kuweza kufanya baadhi ya operation kwenye stack yako kuna methods 7 tu, **emplace, push, empty, pop, top, size, swap**
+
+  - push: Hapo tu tumefanya declaration ya stack yetu ila iko empty hivyo kama tunataka tuweke value kwenye stack yetu tutaumia method ya `push()` ndani ya mabano tunaweka value ya data.Mfano,kupitia mfano inakuwa kwamba ndani ya stack yetu kunakuwa na value yetu ambayo ni 1.
+
+```cpp
+    st.push(1); // {1}
+```
+
+- emplace:emplace ni sawa na push ila utofauti wake ni kwamba emplace ipo haraka ukifananisha na push kwenye stacks.
+
+```cpp
+    st.emplace(2); // {2, 1}
+```
+
+- empty:empty inatumika kuangalia kama stack yako ipo tupu au laa,mfano tunaweza tukatumia .empty kuangalia kama stack ina kitu ndani au hamna na kama hamna tunaweza ukapush value kwenye stack yetu.Kumbuka kwenye C++ kama jibu ni false inarudisha 0 na kama ni true inarudisha 1 kumbuka mwanzoni nilielekeza namna jinsi ya kutumia `boolalpha` kama umesahahu kapitie tena!
+
+```cpp
+#include <iostream>
+#include <stack>
+
+using namespace std;
+
+int main()
+{
+    stack<int> st;
+
+    if (st.empty() == true)
+        cout << "Stack is empty!" << endl;
+    else
+        cout << "The last element added into a stack: " << st.top() << endl;
+    return 0;
+}
+```
+
+- pop:pop() inatumika kutoa element ya mwisho kabisa ambayo imekuwa added kwenye stack yetu.Mfano
+
+```cpp
+
+```
+
+- top:top inarudisha value ya mwisho kuwekwa kwenye stack yako.
+
+```cpp
+    stack<int> st;
+
+    // push
+    st.push(1); // {1}
+
+    // emplace
+    st.emplace(2); // {2, 1}
+    
+    cout << st.top(); // output: 2
+```
+
+Mwanzoni kabisa tulifanya declaration hii `stack<int> st;` kisha tunapush 1 na emplace 2 hivyo stack yetu itakuwa hivi `{2, 1}` kwa hiyo top inachofanya inatoa output ya value ya mwisho kuwa added kwenye stack yetu hivo 2 endapo tutatumia `s.pop()` value ya mwisho kuwa added itatolewa na hivo baada ya hapo tukijaribu `cout << s.top()` tutapata 1 kwa sababu 2 imetolewa kwenye stack yetu,Zingatia hilo! Mfano
+
+```cpp
+    stack<int> st;
+
+    // push
+    st.push(1); // {1}
+
+    // emplace
+    st.emplace(2); // {2, 1}
+
+    // pop(removes the last element to be added into a stack)
+    st.pop();
+
+    cout << st.top(); // output: 1
+```
+
+- size: inarudisha idadi ya element ambazo zipo kwenye stack.Mfano hapo chini baada ya kufanya declaration ya stack `st` tumepush 23 kwenda kwenye stack yetu na ndio ipo 23 tu ndani ya stack.
+
+```cpp
+    stack<int> st;
+    st.push(23); // {1}
+    cout << st.size() << endl; // Output: 1
+```
+
+- swap:Kama ambazo neno linsema swap unaweza swap values za stack moja kwenda kwenye stack nyingine kwenye program yako.
+
+```cpp
+    stack<int> st1, st2;
+    st1.swap(st2);
+```
 
 ## Functions
 
 ## Iterators
+
+[⬆️ Return to Top](#top)
+
+<!-- # Mastering the Standard Template Library (STL) in C++
+
+## Introduction to STL
+- Brief overview of what the STL is and its importance in C++
+- Why understanding the STL is crucial for C++ developers
+
+## Containers
+- Explanation of containers in the STL
+  - `vector`
+  - `list`
+  - `deque`
+  - `set` and `multiset`
+  - `map` and `multimap`
+- When to use each container based on use cases
+- Common operations and member functions for each container
+
+## Iterators
+- Introduction to iterators and their role in STL
+- Types of iterators (input, output, forward, bidirectional, random access)
+- Examples of iterating through different containers using iterators
+
+## Algorithms
+- Overview of algorithms provided by the STL
+- Categorization of algorithms (sorting, searching, modifying, etc.)
+- Commonly used algorithms with examples
+  - `sort`
+  - `find`
+  - `binary_search`
+  - `transform`
+  - `accumulate`
+- How to use algorithms with different containers
+
+## Functors and Lambdas
+- Explanation of functors (function objects) and how they work
+- Introduction to lambdas and their advantages
+- Examples of defining and using functors and lambdas with algorithms
+
+## Custom Data Structures
+- Creating custom data structures compatible with the STL
+- Examples of custom data structures (e.g., priority queue, custom comparator)
+- How to use custom data structures with STL algorithms and containers
+
+## Best Practices and Tips
+- STL best practices for efficient and clean code
+- Tips for choosing the right container or algorithm
+- Performance considerations and trade-offs
+- Error handling and common pitfalls to avoid
+
+## Resources
+- Recommended books, websites, and online resources for further learning
+- Links to additional tutorials or exercises
+- Community forums or groups for discussing STL and C++ topics
+
+## Conclusion
+- Recap of key points learned about mastering the STL
+- Encouragement to practice and explore more on your own
+- Thanking contributors and supporters of the Cpp-Learning-Lab
+ -->
