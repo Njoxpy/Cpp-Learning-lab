@@ -21,7 +21,7 @@ Katika sehemu hii utaweza kupitia mfano wa project ambazo utaweza kutengeneza ku
 
 ### 4. **Todo List Application**
 
-- Hakuna developer amabye hajawahi kutengeneza todolist apllication ila pia sio lazima na wewe kufanya ila ni muhimu,hivyo katika sehemu hii tutatengeneza todo list application ambayo itatuwezesha kuweka task, kumark task kama imekamilika na pia kufuta task katika program.
+- Hakuna developer ambaye hajawahi kutengeneza todolist apllication ila pia sio lazima na wewe kufanya ila ni muhimu,hivyo katika sehemu hii tutatengeneza todo list application ambayo itatuwezesha kuweka task, kumark task kama imekamilika na pia kufuta task katika program.
 
 ### 5. **Bank Management System**
 
@@ -41,6 +41,10 @@ Katika sehemu hii utaweza kupitia mfano wa project ambazo utaweza kutengeneza ku
 ### 8. **Compiler Design**
 
 - Tutatengeneza simple compiler kwa kutumia lugha ya C++ pia tutatengeneza interpreter kwa, tutatumia lexical analysis, parsing na code generation.
+
+## 9. Memory Leak Detector
+
+- Katika sehemu hii tutajifunza jinsi ya kutengeneza memory leak detector kwa kutumia C++ ila hii tutatumia hususani pointers kwahiyo hakikisha kipande cha pointers imepitia vizuri.
 
 ## Conclusion
 
