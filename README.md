@@ -17,14 +17,7 @@ This repository is specifically designed to support university students in Tanza
 
 ## How to Contribute
 
-Contributions to this learning lab are highly appreciated. If you're interested in contributing, please follow these steps:
-
-1. Fork this repository.
-2. Create a new branch for your contributions.
-3. Make your changes or add new content.
-4. Submit a pull request, explaining your changes and their benefits.
-
-Please ensure that your contributions align with the goal of the repository – to assist Tanzanian students with learning C++. All contributions will be reviewed and merged accordingly.
+Visit [Contributing.md](/C++%20Learning-lab/CONTRIBUTING.md)
 
 ## License
 
