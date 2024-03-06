@@ -1,16 +1,17 @@
 # Data types
 
 - Data types
-    - [Introduction](#introduction)
-    - [Types of data types](#types-of-data-types)
-        - [primitive data types](#primitive-data-types)
-        - [Derived data types](#derived-data-types)
-        - [User defined data types](#user-defined-data-types)
-    - [Advantages](#advantages)
-    - [Disavantage](#disadvantage)
+  - [Introduction](#introduction)
+  - [Types of data types](#types-of-data-types)
+    - [Primitive data types](#primitive-data-types)
+    - [Derived data types](#derived-data-types)
+    - [User defined data types](#user-defined-data-types)
+  - [Advantages](#advantages)
+  - [Disavantage](#disadvantage)
+- [Best Practices](#best-practices)
 
+## Introduction
 
-# Introduction
 - Data types hutumika kuamua ukubwa na aina ya data inayoweza kutunzwa
 - Variables na arrays ni makontena katika programu yetu ambayo hutunza data mbalimbali. Sasa, kulingana na datatype uliyotumia operating system ya kompyuta ina tenga nafasi inayoweza kuhifadhi hiyo data.
 - kwa mfano tuangalie hii programu:
@@ -21,7 +22,10 @@
 
 - Hapa, variable ``age`` ni ya data type ``int`` . Hii inamaanisha kwamba variable yetu inaweza kuhifadhi integer yenye byte 2 au 4
 
-# Types of data types
+## Types of data types
+
+## Primitive data types
+
 1. **Primitive Data types:** Hizi ni data types ambazo zinaweza kutumika moja kwa moja kudeclare variables. Primitive data types kwenye C++ ni:
     - Integer
     - Character
@@ -30,25 +34,31 @@
     - Double floating point (double)
     - Void
 
-2. **Derived Data types:** Hizi ni datatypes ambazo zimeundwa kutokea kwa primitive data types. Nazo ni;
+## Derived data types
+
+2.**Derived Data types:** Hizi ni datatypes ambazo zimeundwa kutokea kwa primitive data types. Nazo ni;
     - Function
     - Array
     - Pointer
     - Reference
 
-3. **User defined data types:** Hizi ni datatypes ambazo hutengenezwa na programmer mwenyewe. Hizi user defined datatypes kwenye C++ ni;
+## User defined data types
+
+3.**User defined data types:** Hizi ni datatypes ambazo hutengenezwa na programmer mwenyewe. Hizi user defined datatypes kwenye C++ ni;
     - Class
     - Structure
     - Union
     - Enumeration
     - Typedef defined Datatype
 
-# Datatype Modifier
+## Datatype Modifier
+
 Datatype modifier hutumika pamoja na primitive data types kumodify urefu wa data ambayo datatype husika inaweza kuhifadhi. Data type modifier kwenye C++ ni;
-   - Signed
-   - Unsigned
-   - Short
-   - Long
+
+- Signed
+- Unsigned
+- Short
+- Long
 
 Jedwali hapa chini linaonyesha range ya ukubwa wa primitive data types na ukubwa wa modified primitive data types:
 
@@ -132,12 +142,13 @@ Jedwali hapa chini linaonyesha range ya ukubwa wa primitive data types na ukubwa
 
 </table>
 
-```
+```txt
 Note:
 Thamani za range zilizopo katika jedwali hapo juu zinatofautiana na aina ya compiler. Kwenye  mfano hapo juu tumetumia GCC 32 bit
 ```
 
 Ukitaka kupata size ya data type tofauti kwenye computer yako tumia programu hii:
+
 ```cpp
 #include <iostream>
 using namespace std;
@@ -155,33 +166,36 @@ int main() {
 }
 ```
 
-# typedef Declarations
+## typedef Declarations
+
 typedef hutumika kuyapa majina mapya data types. ifuatayo ni sintaksia rahisi kufafanua aina mpya ya data type kwa kutumia typedef
+
 ```cpp
 typedef type newname;
 ```
 
 kwa mfano, programu ifuatayo inaiambia compiler kuwa saa ni jina jingine la int;
+
 ```cpp
 typedef int saa;
 ```
 
 hivyo, declaration ifuatayo ni sahii na inatengeneza integer iitwayo urefu;
+
 ```cpp
 saa urefu;
 ```
-# Advantages:
+
+## Advantages
+
 1. Data types zinatupa njia ya kupanga data ndani ya programu yetu, hivyo hutusaidia kuelewa na kutunza program yetu kwa urahisi.
 2. kila data type ina range ya thamani inayoweza kutunza, hivyo hutupatia udhibiti sahihi juu ya data gani inaweza kutunzwa.
 3. Data types zinapunguza makosa ndani ya program kwa kuweka sheria kali juu ya jinsi data zinaweza kutumika.
 4. C++ ina aina mbalimbali za datatypes, hivyo humuwezesha developer kuchagua datatype inayoofa matumizi yake.
 
-# Disadvantage:
+## Disadvantage
+
 1. Matumizi yasiyo sahihi ya data type huleta makosa ndani ya programu.
-2. Data types kama long doubles or char arrays huchukua nafasi kubwa, hivyo zikitumika sana zinatumia hifadhi kubwa na hupunguza uwezo wa compiler 
+2. Data types kama long doubles or char arrays huchukua nafasi kubwa, hivyo zikitumika sana zinatumia hifadhi kubwa na hupunguza uwezo wa compiler
 
-   
-
-
-
-
+## Best Practices
