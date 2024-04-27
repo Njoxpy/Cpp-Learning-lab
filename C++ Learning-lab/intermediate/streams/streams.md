@@ -6,6 +6,7 @@
 - [Input and Output Streams](#input-and-output-streams)
 - [Standard Streams](#standard-streams)
 - [Reading from Streams](#reading-from-streams)
+- [Handling Input Errors](#handling-input-errors)
 - [Writing to Streams](#writing-to-streams)
 - [File Streams](#file-streams)
 - [String Streams](#string-streams)
@@ -29,7 +30,7 @@
 
 ## Reading from Streams
 
-- Let's tunataka kutengeneza a simple program ambayo inamruhusu user aweze kuingiza namba mbili then baada ya hapo majibu yawe displayed kwenye output
+- Tunataka kutengeneza a simple program ambayo inamruhusu user aweze kuingiza namba mbili then baada ya hapo majibu yawe displayed kwenye output.
 
 ```cpp
 #include <iostream>
@@ -53,14 +54,9 @@ int main(){
 
 ```
 
-- Hapa endapo user wetu ataingiza namba pili kwenye program yetu sehemu ya kwanza kitakachotokea ni hichi kama output
+- Kwenye program yetu kuna kitu kinitwa buffer na ndio kinachohusika na kuhifadhi value ambazo mtumiaji wetu kaingiza hivyo value ambayo user ataingiza iatahifadhiwa kwenye buffer na buffer huwa inajaa,sasa kwa mfano user akaingiza namba ya kwanza bila kupress enter sasa kinchofanyika namba ya kwanza aliyoingiza inawekwa kwenye buffer na buffer ikiona white space au newline imekuwa created namba inayofuata inahifadhiwa kwenye buffer pia na hiyo napelekea kujaa kwa buffer hivyo namba ya pili user hattaweza kuingiza hivyo inabidi kutumia `cin.ignore()` kwa ajiili ya kufanya clear ya buffer.
 
-```cpp
-First:10 30
- Second: First number is 10 Second number is 30
-```
-
-mwanzoni user wetu anaingiza number yake kwenye program hiyo namba huwa inahifadhiwa katika temporary storgae amabyo initwa buffer, buffer
+mwanzoni user wetu anaingiza number yake kwenye program hiyo namba huwa inahifadhiwa katika temporary storgae amabyo inaitwa buffer, buffer
 Je ni nini hichi kimetokea? Katika pale ambapo user ataingiza namba ya kwanza ambayo itaenda kwenye variable ya `first` namba hiyo inaenda kuhifadhiwa katika sehemu inaitwa `buffer`, buffer ni temporaray storage
 > buffer-is the temporary storage area where the program can hold some information before using it or sending it somewhere else.
 
@@ -83,6 +79,8 @@ Je ni nini hichi kimetokea? Katika pale ambapo user ataingiza namba ya kwanza am
    ```cpp
    numeric_limits<streamsize>::max();
    ```
+
+## Handling Input Errors
 
 ## Writing to Streams
 

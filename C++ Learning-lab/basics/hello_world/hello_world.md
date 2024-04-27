@@ -109,7 +109,6 @@ int main()
 
 - Ili ntuweze kurun code yetu kwanza code yetu inabidi iwe compiled kwenda kwenye machine code, na hivi vyote vinafanywa na compiler, machine code ni ile language au lugha ambayo machine inatumia ili iweze kufanya opereshenni mabmbali za program, machine code za C++ ambazo zinakuwa compiled katika window ni tofauti na machinbe code za MacOs hivyo ili kuweza kurun machine code za MacOs ambazi zilikuwa katika Windows inabidi urun a=code zako kwanza yaani ziwe compiled kwa mara ya pili kwenye operating tofauti na ile ya mara ya kwanza.
 
-
 ## Introduction to Format Specifiers
 
 ## Basic I/O Using Format Specifiers
@@ -121,6 +120,10 @@ int main()
 ## Character and String Format Specifiers
 
 ## Width and Precision Specifiers
+
+- Unaweza pia uka specify width na precision wakati unaprint namba kwenye program yako.
+  - `setw(n)`: setwidth inachukau parameter moja, ambayo ni dadi ya chracters ambazo unataka kuchukua au kuacha pale ambapo value yako unataka iwe printed kwenye output,inaresolve idadi ya data ambazo zinakuja baada!
+
 
 ## Manipulators
 

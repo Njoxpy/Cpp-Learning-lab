@@ -1,23 +1,71 @@
 # Errors
 
 - [Introduction](#introduction)
-- [Common Errors](#common-errors)
+- [Common Errors and Solutions](#common-errors-and-solutions)
   - [Syntax Error](#syntax-error)
   - [Logical Errors](#logical-errors)
   - [Run Time Errors](#run-time-errors)
+  - [Semantic Errors](#semantic-errors)
+  - [Linker Errors](#linker-errors)
+- [Handling Errors](#handling-errors)
 - [Best Practices](#best-practices)
 
 ## Introduction
 
-## Common Errors
+These are just a few common errors that you might encounter while working on this project. If you encounter an error that is not listed here, consider searching online for more information or asking for help from your colleagues or online communities.
 
 ## Syntax Error
 
-- Syntax error katika programming ni sawa na grammar error katika lugha za kawaida,ubaya wa sytax error ni kwamba 
+- Syntax error katika programming ni sawa na grammar error katika lugha za kawaida.Zinatokea endapo utakuwa umefanya violation ya Sintaksia za lugha ya C++.Mfano
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int x = 10 // Kukosekana kwa semi colon mwisho wa line
+    if (x > 5) // Missing opening brace for the if statement
+        cout << "x is greater than 5";
+
+    return 0;
+}
+```
 
 ## Logical Errors
 
+- Error ambazo code inafanya compilation vizuri na kurun vizuri bila kufanya crashing, lakini haitoi matokeo(jibu) ambalo ulitegemea kutokana na logic ya program yako.Mfano:
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+int main()
+{ // Logical error: Incorrect condition
+    if (x = 5)
+    {
+        cout << "x is 5";
+    }
+
+    // Logical error: Incorrect loop termination condition
+    for (int i = 0; i <= 10; i++)
+    {
+        // Do something
+    }
+
+    return 0;
+}
+```
+
 ## Run Time Errors
+
+## Semantic Errors
+
+## Linker Errors
+
+## Handling Errors
 
 ## Best Practices
 
