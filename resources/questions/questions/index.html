@@ -1,0 +1,3101 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Learn C++ from basics to advanced">
+      
+      
+        <meta name="author" content="Njox">
+      
+      
+      
+        <link rel="prev" href="../../books/books/">
+      
+      
+        <link rel="next" href="../../website/website/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Questions - C++ Learning Lab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#questions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="C++ Learning Lab" class="md-header__button md-logo" aria-label="C++ Learning Lab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            C++ Learning Lab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Questions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Njoxpy/Cpp-Learning-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="C++ Learning Lab" class="md-nav__button md-logo" aria-label="C++ Learning Lab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    C++ Learning Lab
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Njoxpy/Cpp-Learning-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Basics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basics/introduction/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basics/variables/variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basics/Data%20Type/data_types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basics/input_handling/input_handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basics/strings/strings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basics/arrays/arrays/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arrays
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basics/loops/loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Loops
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basics/decision-making/decision_making/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decision Making
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basics/functions/functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basics/pointers/pointers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pointers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basics/hello_world/hello_world/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hello World
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intermediate
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Intermediate
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../intermediate/algorithms/algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algorithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../intermediate/data_structures/dataStructure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Structures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../intermediate/enumerations/enumerations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enumerations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../intermediate/errors/errors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Errors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../intermediate/exceptions/exceptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exceptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../intermediate/memory_management/memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Memory Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../intermediate/object-oriented-programming/oop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OOP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Streams
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Streams
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../intermediate/streams/streams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Streams Intro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../intermediate/streams/files/files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Streams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../intermediate/structures/structures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Structures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../intermediate/templates/templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../advanced/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mastering STL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mastering STL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mastering-STL/stl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STL Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Networking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../networking/networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking in C++
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beginner
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Beginner
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/beginer/calculator.cpp" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/beginer/calculator_stl.cpp" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Calculator STL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/beginer/guessNumber.cpp" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guess Number
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/beginer/guessNumberFunc.cpp" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guess Number Func
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intermediate
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Intermediate
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/intermediate/bankManagement.cpp" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bank Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/intermediate/fileEncryption.cpp" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Encryption
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/projets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../books/books/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Books
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Questions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arrays
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control Flow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Control Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#control-flow-in-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control Flow in C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functions-in-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functions in C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pointers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pointers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pointers-in-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pointers in C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Strings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strings-in-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strings in C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision-making" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Making
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operators
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intermediate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intermediate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithms
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algorithms-in-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithms in C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Structures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumerations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enumerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enumerations-in-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumerations in C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enumerations-in-c_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumerations in C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Errors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memory-management-in-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Management in C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STL
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-oriented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Object Oriented
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Templates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../website/website/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Websites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arrays
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control Flow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Control Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#control-flow-in-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control Flow in C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functions-in-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functions in C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pointers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pointers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pointers-in-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pointers in C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Strings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strings-in-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strings in C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision-making" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Making
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operators
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intermediate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intermediate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithms
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algorithms-in-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithms in C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Structures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumerations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enumerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enumerations-in-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumerations in C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enumerations-in-c_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumerations in C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Errors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memory-management-in-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Management in C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STL
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-oriented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Object Oriented
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Templates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Questions</h1>
+
+<h2 id="questions">Questions<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="#basics">Basics</a></li>
+<li><a href="#arrays">Arrays</a></li>
+<li><a href="#control-flow">Control Flow</a></li>
+<li><a href="#functions">Functions</a></li>
+<li><a href="#pointers">Pointers</a></li>
+<li><a href="#strings">Strings</a></li>
+<li><a href="#variables">Variables</a></li>
+<li><a href="#decision-making">Decision Making</a></li>
+<li><a href="#operators">Operators</a></li>
+<li><a href="#intermediate">Intermediate</a></li>
+<li><a href="#algorithms">Algorithms</a></li>
+<li><a href="#data-structures">Data Structures</a></li>
+<li><a href="#enumerations">Enumerations</a></li>
+<li><a href="#errors">Errors</a></li>
+<li><a href="#memory-management">Memory Management</a></li>
+<li><a href="#object-oriented">Object Oriented</a></li>
+<li><a href="#stl">STL</a></li>
+<li><a href="#structures">Structures</a></li>
+<li><a href="#templates">Templates</a></li>
+<li><a href="#advanced">Advanced</a></li>
+</ul>
+<h2 id="basics">Basics<a class="headerlink" href="#basics" title="Permanent link">&para;</a></h2>
+<h2 id="arrays">Arrays<a class="headerlink" href="#arrays" title="Permanent link">&para;</a></h2>
+<h2 id="control-flow">Control Flow<a class="headerlink" href="#control-flow" title="Permanent link">&para;</a></h2>
+<ul>
+<li>What is the purpose of the if statement in C++?</li>
+<li>How do you use the if-else statement in C++?</li>
+<li>Discuss the nested if-else statement in C++.</li>
+<li>Explain the concept of the else-if ladder in C++.</li>
+<li>How do you use the switch statement as an alternative to multiple if-else statements?</li>
+<li>What is the ternary conditional operator (? :) in C++, and how is it used?</li>
+<li>Discuss the usage of short-circuit evaluation with if-else statements.</li>
+<li>How do you write multi-line if-else statements in C++?</li>
+<li>Explain the importance of the default case in switch statements.</li>
+<li>Discuss the common mistakes to avoid when using if-else statements in C++.</li>
+</ul>
+<h3 id="control-flow-in-c">Control Flow in C++<a class="headerlink" href="#control-flow-in-c" title="Permanent link">&para;</a></h3>
+<ol>
+<li>What is control flow in programming, and why is it important?</li>
+<li>Describe the role of conditional statements in C++ control flow.</li>
+<li>Explain the syntax and usage of the <code>if</code> statement in C++.</li>
+<li>How does the <code>else if</code> statement differ from nested <code>if</code> statements in C++?</li>
+<li>Discuss the purpose and usage of the <code>switch</code> statement in C++.</li>
+<li>What is the difference between <code>while</code> and <code>do-while</code> loops in C++? Provide examples.</li>
+<li>Explain the concept of loop control statements (<code>break</code>, <code>continue</code>, <code>goto</code>) in C++.</li>
+<li>Discuss the syntax and usage of the <code>for</code> loop in C++. How does it compare to <code>while</code> loops?</li>
+<li>Describe the role of iteration control variables in <code>for</code> loops in C++.</li>
+<li>What is the purpose of the <code>range-based for</code> loop introduced in C++11?</li>
+<li>Explain how you can use <code>break</code> and <code>continue</code> statements in nested loops in C++.</li>
+<li>Discuss the dangers and potential misuse of the <code>goto</code> statement in C++.</li>
+<li>How does C++ handle nested control structures, such as nested loops and conditional statements?</li>
+<li>Describe the behavior of control flow statements in C++ in relation to scope and variable visibility.</li>
+<li>What are the advantages of using functions to control program flow in C++?</li>
+<li>How does C++ handle control flow in error and exception handling scenarios?</li>
+<li>Discuss the role of recursion in control flow in C++. What are its advantages and disadvantages?</li>
+<li>Explain the differences between static and dynamic control flow in C++.</li>
+<li>Describe the role of conditional operators (<code>&amp;&amp;</code>, <code>||</code>, <code>?:</code>) in C++ control flow.</li>
+<li>Discuss the impact of control flow optimization techniques on the performance of C++ programs.</li>
+</ol>
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
+<h3 id="functions-in-c">Functions in C++<a class="headerlink" href="#functions-in-c" title="Permanent link">&para;</a></h3>
+<ol>
+<li>What is a function in C++?</li>
+<li>Explain the difference between a function declaration and a function definition.</li>
+<li>How do you declare a function in C++?</li>
+<li>Discuss the syntax for defining a function in C++.</li>
+<li>What is the purpose of function prototypes in C++?</li>
+<li>How do you call a function in C++?</li>
+<li>Explain the concept of function parameters. What are the different types of function parameters in C++?</li>
+<li>Describe the difference between pass-by-value and pass-by-reference in function parameters.</li>
+<li>How do you return values from a function in C++?</li>
+<li>What is function overloading? Provide an example.</li>
+<li>Discuss the concept of default arguments in C++ functions.</li>
+<li>Explain the role of inline functions in C++. When should they be used?</li>
+<li>What are recursive functions? How do you implement recursion in C++?</li>
+<li>Discuss the benefits and drawbacks of using recursion in C++.</li>
+<li>How does C++ handle function scope and variable visibility?</li>
+<li>Describe the use of function pointers in C++. Provide an example.</li>
+<li>Explain the purpose of function templates in C++. How do you define and use them?</li>
+<li>Discuss the concept of lambda functions in C++. How are they defined and used?</li>
+<li>What are the differences between lambdas and regular functions in C++?</li>
+<li>How do you organize functions within a C++ program for readability and maintainability?</li>
+</ol>
+<h2 id="pointers">Pointers<a class="headerlink" href="#pointers" title="Permanent link">&para;</a></h2>
+<h3 id="pointers-in-c">Pointers in C++<a class="headerlink" href="#pointers-in-c" title="Permanent link">&para;</a></h3>
+<ol>
+<li>What is a pointer in C++?</li>
+<li>Explain the concept of memory address and how pointers relate to it.</li>
+<li>How do you declare a pointer variable in C++?</li>
+<li>Describe the difference between a null pointer and a void pointer.</li>
+<li>How do you initialize a pointer in C++?</li>
+<li>Discuss the significance of the asterisk (*) operator in C++ pointer declarations.</li>
+<li>Explain the concept of pointer arithmetic in C++. Provide an example.</li>
+<li>What are the advantages of using pointers in C++?</li>
+<li>Describe the process of allocating memory dynamically using pointers.</li>
+<li>How do you access the value stored at a memory address pointed to by a pointer?</li>
+<li>Discuss the dangers of using uninitialized pointers in C++.</li>
+<li>What is a dangling pointer? How can it be avoided?</li>
+<li>Explain the difference between pass by value and pass by reference using pointers.</li>
+<li>How do you deallocate memory allocated dynamically using pointers?</li>
+<li>What are function pointers in C++? Provide an example of their usage.</li>
+<li>Discuss the role of pointers in creating data structures like linked lists and trees.</li>
+<li>Explain the concept of pointer-to-pointer (double pointer) in C++.</li>
+<li>How can you check if a pointer is pointing to valid memory?</li>
+<li>Discuss the use of const pointers and pointer to constants in C++.</li>
+<li>Describe the relationship between arrays and pointers in C++.</li>
+<li>How can you use pointers to achieve dynamic memory allocation for multidimensional arrays?</li>
+<li>Discuss the differences between pointers and references in C++.</li>
+<li>What is the <code>nullptr</code> keyword in C++ and how is it used with pointers?</li>
+<li>Explain the concept of smart pointers and their role in modern C++ programming.</li>
+<li>How do you handle pointers in object-oriented programming in C++?</li>
+</ol>
+<h2 id="strings">Strings<a class="headerlink" href="#strings" title="Permanent link">&para;</a></h2>
+<h3 id="strings-in-c">Strings in C++<a class="headerlink" href="#strings-in-c" title="Permanent link">&para;</a></h3>
+<ol>
+<li>What are strings in C++ and how are they represented?</li>
+<li>Explain the difference between C-style strings and C++ <code>std::string</code>.</li>
+<li>How do you declare and initialize a <code>std::string</code> variable in C++?</li>
+<li>Discuss the advantages of using <code>std::string</code> over C-style strings.</li>
+<li>How do you concatenate two strings in C++?</li>
+<li>What is the <code>length()</code> method in <code>std::string</code> and how is it used?</li>
+<li>Explain the usage of the <code>substr()</code> method in <code>std::string</code>.</li>
+<li>How can you access individual characters in a <code>std::string</code>?</li>
+<li>Discuss the various ways to traverse through a <code>std::string</code>.</li>
+<li>What is string interpolation, and does C++ support it natively?</li>
+<li>Explain the usage of the <code>find()</code> method in <code>std::string</code>.</li>
+<li>How do you compare two strings in C++?</li>
+<li>Discuss the role of character encoding in C++ strings.</li>
+<li>What are the limitations of C-style strings compared to <code>std::string</code>?</li>
+<li>How do you convert between C-style strings and <code>std::string</code> in C++?</li>
+<li>Discuss the impact of string manipulation on memory management in C++.</li>
+<li>Explain the difference between <code>c_str()</code> and <code>data()</code> methods in <code>std::string</code>.</li>
+<li>How does C++ handle string input/output operations?</li>
+<li>Discuss the performance considerations when working with large strings in C++.</li>
+<li>What are some common pitfalls to avoid when working with strings in C++?</li>
+</ol>
+<h2 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">&para;</a></h2>
+<ul>
+<li>What is a variable, and why is it essential in programming?</li>
+<li>Differentiate between local and global variables in C++.</li>
+<li>How do you declare and initialize variables in C++?</li>
+<li>Discuss the role of data types in determining the type of variables.</li>
+<li>What is the significance of the const keyword when declaring variables?</li>
+<li>Explain the difference between automatic, static, and dynamic variables.</li>
+<li>How does the lifetime of a variable impact its usage in a program?</li>
+<li>Discuss the rules and best practices for naming variables in C++.</li>
+<li>Provide examples of variable declarations with appropriate data types.
+  What is a data type, and why is it important in C++?</li>
+<li>Explain the purpose of the int data type in C++.</li>
+<li>What is the range of values that an int can represent in C++?</li>
+<li>How do you use the sizeof operator to determine the size of an int variable?</li>
+<li>Discuss the differences between signed and unsigned integers.</li>
+<li>Explain the concept of integer overflow and how it can be mitigated.</li>
+<li>Provide examples of arithmetic operations using int variables.</li>
+<li>Describe the role of casting in converting between different data types, including int.</li>
+<li>Discuss the significance of the % (modulo) operator with respect to integers.</li>
+<li>How does C++ handle division of integers, and what are the potential issues?</li>
+</ul>
+<h2 id="decision-making">Decision Making<a class="headerlink" href="#decision-making" title="Permanent link">&para;</a></h2>
+<h2 id="operators">Operators<a class="headerlink" href="#operators" title="Permanent link">&para;</a></h2>
+<ul>
+<li>What are comparison operators in C++?</li>
+<li>Discuss the equality operator (==) in C++.</li>
+<li>Explain the inequality operator (!=) in C++.</li>
+<li>Describe the greater than (&gt;) and less than (&lt;) operators in C++.</li>
+<li>Discuss the greater than or equal to (&gt;=) and less than or equal to (&lt;=) operators in C++.</li>
+<li>What is the significance of comparing floating-point numbers using == in C++?</li>
+<li>Explain the concept of operator overloading in C++ concerning comparison operators.</li>
+<li>Discuss the usage of comparison operators with strings in C++.</li>
+<li>How do you compare pointers using comparison operators in C++?</li>
+<li>What happens when comparing objects of user-defined types in C++?</li>
+</ul>
+<h2 id="intermediate">Intermediate<a class="headerlink" href="#intermediate" title="Permanent link">&para;</a></h2>
+<h2 id="algorithms">Algorithms<a class="headerlink" href="#algorithms" title="Permanent link">&para;</a></h2>
+<h3 id="algorithms-in-c">Algorithms in C++<a class="headerlink" href="#algorithms-in-c" title="Permanent link">&para;</a></h3>
+<ol>
+<li>What is an algorithm in the context of computer science?</li>
+<li>Explain the importance of algorithm analysis in software development.</li>
+<li>Describe the difference between time complexity and space complexity of an algorithm.</li>
+<li>How do you measure the efficiency of an algorithm in terms of time complexity?</li>
+<li>Discuss the concept of Big O notation and its significance in algorithm analysis.</li>
+<li>What are the common categories of algorithmic complexity (e.g., O(1), O(log n), O(n), O(n^2), etc.)?</li>
+<li>Explain the concept of algorithmic stability. Why is it important?</li>
+<li>Describe the process of algorithm design. What are the key steps involved?</li>
+<li>Discuss the advantages and disadvantages of iterative versus recursive algorithms in C++.</li>
+<li>Explain the difference between a brute-force algorithm and an optimized algorithm.</li>
+<li>What are searching algorithms? Provide examples of commonly used searching algorithms in C++.</li>
+<li>Discuss the characteristics and use cases of linear search and binary search algorithms.</li>
+<li>What is a sorting algorithm? List and briefly explain some commonly used sorting algorithms in C++.</li>
+<li>Compare and contrast the performance of bubble sort, insertion sort, selection sort, and merge sort.</li>
+<li>Explain the concept of divide and conquer in algorithm design. Provide examples of algorithms that use this approach.</li>
+<li>What is dynamic programming? How does it differ from greedy algorithms?</li>
+<li>Describe the process of backtracking in algorithm design. Provide examples of problems solved using backtracking.</li>
+<li>Discuss the importance of algorithmic optimization techniques in C++ programming.</li>
+<li>Explain the role of recursion in algorithm design. How can tail recursion be optimized in C++?</li>
+<li>Describe how algorithms are implemented and utilized in the C++ Standard Template Library (STL).</li>
+<li>Discuss the significance of algorithmic complexity analysis in the context of real-world applications.</li>
+<li>How can you determine the efficiency of an algorithm experimentally through benchmarking in C++?</li>
+<li>Describe the process of algorithm debugging and optimization in C++.</li>
+<li>Discuss the impact of algorithmic complexity on system performance and scalability.</li>
+<li>What are some strategies for improving the efficiency of algorithms in C++?</li>
+</ol>
+<h2 id="data-structures">Data Structures<a class="headerlink" href="#data-structures" title="Permanent link">&para;</a></h2>
+<h2 id="enumerations">Enumerations<a class="headerlink" href="#enumerations" title="Permanent link">&para;</a></h2>
+<h3 id="enumerations-in-c">Enumerations in C++<a class="headerlink" href="#enumerations-in-c" title="Permanent link">&para;</a></h3>
+<ol>
+<li>What is an enumeration in C++?</li>
+<li>How do you declare an enumeration in C++?</li>
+<li>Explain the purpose of enumerations in programming.</li>
+<li>What is the difference between an enumeration and a set of preprocessor #define constants?</li>
+<li>How are enumerations implemented in memory in C++?</li>
+<li>Can you assign integer values explicitly to enumeration constants? If so, how?</li>
+<li>How do you access individual elements of an enumeration in C++?</li>
+<li>Discuss the scope of enumeration constants in C++.</li>
+<li>Can you define methods or member variables inside an enumeration in C++? Why or why not?</li>
+<li>Explain the concept of scoped enumerations (enum class) introduced in C++11.</li>
+<li>What are the advantages of using scoped enumerations over traditional enumerations?</li>
+<li>How do you specify the underlying type of a C++ enumeration?</li>
+<li>Discuss the use of enumerations in switch statements in C++.</li>
+<li>Can you convert between enumeration values and integers in C++? If so, how?</li>
+<li>How do you iterate through all the values of an enumeration in C++?</li>
+<li>Explain the role of enumeration types in improving code readability and maintainability.</li>
+<li>Discuss scenarios where enumerations are preferable over other data types in C++.</li>
+<li>What are the limitations of using enumerations in C++?</li>
+<li>How do you handle out-of-range enumeration values in C++?</li>
+<li>Provide examples of real-world scenarios where enumerations are commonly used in C++ programming.</li>
+</ol>
+<h3 id="enumerations-in-c_1">Enumerations in C++<a class="headerlink" href="#enumerations-in-c_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>What is an enumeration in C++?</li>
+<li>How do you declare an enumeration in C++?</li>
+<li>Explain the purpose of enumerations in programming.</li>
+<li>What is the difference between an enumeration and a set of preprocessor #define constants?</li>
+<li>How are enumerations implemented in memory in C++?</li>
+<li>Can you assign integer values explicitly to enumeration constants? If so, how?</li>
+<li>How do you access individual elements of an enumeration in C++?</li>
+<li>Discuss the scope of enumeration constants in C++.</li>
+<li>Can you define methods or member variables inside an enumeration in C++? Why or why not?</li>
+<li>Explain the concept of scoped enumerations (enum class) introduced in C++11.</li>
+<li>What are the advantages of using scoped enumerations over traditional enumerations?</li>
+<li>How do you specify the underlying type of a C++ enumeration?</li>
+<li>Discuss the use of enumerations in switch statements in C++.</li>
+<li>Can you convert between enumeration values and integers in C++? If so, how?</li>
+<li>How do you iterate through all the values of an enumeration in C</li>
+</ol>
+<h2 id="errors">Errors<a class="headerlink" href="#errors" title="Permanent link">&para;</a></h2>
+<ol>
+<li>What are the different types of errors in C++?</li>
+<li>Explain the difference between compile-time errors and runtime errors in C++.</li>
+<li>How does C++ handle syntax errors during compilation?</li>
+<li>Describe the process of handling runtime errors in C++.</li>
+<li>What are logical errors in C++? How can they be identified and fixed?</li>
+<li>Discuss the role of exception handling in C++ error management.</li>
+<li>Explain the purpose and usage of <code>try</code>, <code>catch</code>, and <code>throw</code> keywords in C++ exception handling.</li>
+<li>What are the benefits and drawbacks of using exceptions for error handling in C++?</li>
+<li>How does C++ support error handling in functions that return values?</li>
+<li>Describe the role of the standard library's <code>&lt;stdexcept&gt;</code> header in C++ error handling.</li>
+<li>Discuss the concept of stack unwinding in C++ exception handling.</li>
+<li>Explain the relationship between error handling and resource management in C++.</li>
+<li>What are segmentation faults (segfaults) in C++? How can they be prevented?</li>
+<li>How does C++ handle memory allocation errors?</li>
+<li>Describe common strategies for debugging errors in C++ programs.</li>
+<li>Discuss the role of assertions in error checking during program development.</li>
+<li>How can you handle input/output errors in C++ programs?</li>
+<li>Explain the purpose and usage of the <code>errno</code> variable in C++ error handling.</li>
+<li>What are the potential consequences of unchecked errors in C++ programs?</li>
+<li>Discuss best practices for effective error handling and debugging in C++.</li>
+</ol>
+<h2 id="memory-management">Memory Management<a class="headerlink" href="#memory-management" title="Permanent link">&para;</a></h2>
+<h3 id="memory-management-in-c">Memory Management in C++<a class="headerlink" href="#memory-management-in-c" title="Permanent link">&para;</a></h3>
+<ol>
+<li>What is dynamic memory allocation in C++?</li>
+<li>Explain the difference between stack and heap memory.</li>
+<li>How do you allocate memory on the heap in C++?</li>
+<li>What is the purpose of the <code>new</code> operator in C++?</li>
+<li>Describe the process of deallocating memory in C++.</li>
+<li>What are memory leaks? How can they be avoided in C++?</li>
+<li>Explain the concept of smart pointers in C++. How do they help with memory management?</li>
+<li>What are the differences between <code>unique_ptr</code>, <code>shared_ptr</code>, and <code>weak_ptr</code>?</li>
+<li>How does C++ handle memory management for local variables?</li>
+<li>Discuss the dangers of using raw pointers for memory management in C++.</li>
+<li>What is RAII (Resource Acquisition Is Initialization) and how does it relate to memory management?</li>
+<li>Describe the role of destructors in C++ memory management.</li>
+<li>How does C++ manage memory for objects created with <code>new</code> and <code>delete</code>?</li>
+<li>Explain the purpose and usage of the <code>malloc</code> and <code>free</code> functions in C++.</li>
+<li>How can you determine memory usage and performance issues in a C++ program?</li>
+<li>Discuss the benefits and drawbacks of using custom memory allocators in C++.</li>
+<li>How does C++ handle memory management in multi-threaded environments?</li>
+<li>Explain the role of move semantics in optimizing memory management in C++.</li>
+<li>What are some best practices for effective memory management in C++?</li>
+<li>Discuss the impact of memory fragmentation on C++ programs and potential mitigation strategies.</li>
+</ol>
+<h2 id="stl">STL<a class="headerlink" href="#stl" title="Permanent link">&para;</a></h2>
+<ol>
+<li>What is the difference between an STL container and an STL algorithm?</li>
+<li>Suppose that you have the following statement:
+pair<int, string> temp;
+a. Write a C++ statement that stores the pair (1, "Hello") into temp.
+b. Write a C++ statement that outputs the pair stored in temp onto the
+standard output device.</li>
+<li>Suppose that you have the following statement:</li>
+</ol>
+<div class="codehilite"><pre><span></span><code><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+</code></pre></div>
+
+<p>What is the output, if any, of the following statements?</p>
+<div class="codehilite"><pre><span></span><code><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_pair</span><span class="p">(</span><span class="s">&quot;Duckey&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Donald&quot;</span><span class="p">);</span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">name</span><span class="p">.</span><span class="n">first</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">name</span><span class="p">.</span><span class="n">second</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</code></pre></div>
+
+<h2 id="object-oriented">Object Oriented<a class="headerlink" href="#object-oriented" title="Permanent link">&para;</a></h2>
+<h2 id="structures">Structures<a class="headerlink" href="#structures" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Given the following structure and structure variable declaration:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">TermAccount</span>
+<span class="p">{</span>
+<span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">balance</span><span class="p">;</span>
+<span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">interest_rate</span><span class="p">;</span>
+<span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">term</span><span class="p">;</span>
+<span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">initial1</span><span class="p">;</span>
+<span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">initial2</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="n">TermAccount</span><span class="w"> </span><span class="n">account</span><span class="p">;</span>
+</code></pre></div>
+
+<p>what is the type of each of the following? Mark any that are not correct.
+a. account.balance
+b. account.interest_rate
+c. TermAccount.term
+d. savings_account.initial1
+e. account.initial2
+f. account</p>
+<ul>
+<li>Consider the following type definition:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">ShoeType</span>
+<span class="p">{</span>
+<span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">style</span><span class="p">;</span>
+<span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">price</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<p>Given this structure type definition, what will be the output produced by
+the following code?</p>
+<div class="codehilite"><pre><span></span><code><span class="n">ShoeType</span><span class="w"> </span><span class="n">shoe1</span><span class="p">,</span><span class="w"> </span><span class="n">shoe2</span><span class="p">;</span>
+<span class="n">shoe1</span><span class="p">.</span><span class="n">style</span><span class="w"> </span><span class="o">=</span><span class="sc">&#39;A&#39;</span><span class="p">;</span>
+<span class="n">shoe1</span><span class="p">.</span><span class="n">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">9.99</span><span class="p">;</span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">shoe1</span><span class="p">.</span><span class="n">style</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; $&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">shoe1</span><span class="p">.</span><span class="n">price</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="n">shoe2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shoe1</span><span class="p">;</span>
+<span class="n">shoe2</span><span class="p">.</span><span class="n">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shoe2</span><span class="p">.</span><span class="n">price</span><span class="o">/</span><span class="mi">9</span><span class="p">;</span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">shoe2</span><span class="p">.</span><span class="n">style</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; $&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">shoe2</span><span class="p">.</span><span class="n">price</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</code></pre></div>
+
+<ul>
+<li>Here is an initialization of a structure type. Tell what happens with each
+initialization. Note any problems with these initializations.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">Date</span>
+<span class="p">{</span>
+<span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">month</span><span class="p">;</span>
+<span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">day</span><span class="p">;</span>
+<span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">year</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<p>a. Date due_date = {12, 21};
+b. Date due_date = {12, 21, 20, 22};
+c. Date due_date = {12, 21, 20, 22};
+d. Date due_date = {12, 21, 22};</p>
+<ul>
+<li>Write a definition for a structure type for records consisting of a person’s
+wage rate, accrued vacation (which is some whole number of days), and
+status (which is either hourly or salaried). Represent the status as one of
+the two char values 'H' and 'S'. Call the type EmployeeRecord.</li>
+<li>Give a function definition corresponding to the following function
+declaration. (The type ShoeType is given in Self-Test Exercise 2.)
+void read_shoe_record(ShoeType&amp; new_shoe);
+//Fills new_shoe with values read from the keyboard.</li>
+</ul>
+<h2 id="templates">Templates<a class="headerlink" href="#templates" title="Permanent link">&para;</a></h2>
+<ul>
+<li>What is a template in C++?</li>
+<li>Discuss the difference between function templates and class templates.</li>
+<li>How do you define a template function in C++?</li>
+<li>Explain the concept of template specialization.</li>
+<li>What are the advantages of using templates in C++?</li>
+<li>How do you pass template arguments in C++?</li>
+<li>Discuss the role of template arguments deduction.</li>
+<li>What is the syntax for creating a template class in C++?</li>
+<li>How do you ensure type safety in template programming?</li>
+<li>Explain the use of template metaprogramming in C++</li>
+</ul>
+<h2 id="advanced">Advanced<a class="headerlink" href="#advanced" title="Permanent link">&para;</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Njoxpy/Cpp-Learning-lab" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "content.code.copy", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

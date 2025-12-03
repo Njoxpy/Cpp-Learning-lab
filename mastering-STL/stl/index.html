@@ -1,0 +1,3000 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Learn C++ from basics to advanced">
+      
+      
+        <meta name="author" content="Njox">
+      
+      
+      
+        <link rel="prev" href="../../intermediate/templates/templates/">
+      
+      
+        <link rel="next" href="../../networking/networking/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>STL Guide - C++ Learning Lab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mastering-stl" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="C++ Learning Lab" class="md-header__button md-logo" aria-label="C++ Learning Lab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            C++ Learning Lab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              STL Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Njoxpy/Cpp-Learning-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="C++ Learning Lab" class="md-nav__button md-logo" aria-label="C++ Learning Lab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    C++ Learning Lab
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Njoxpy/Cpp-Learning-lab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Basics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/introduction/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/variables/variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/Data%20Type/data_types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/input_handling/input_handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/strings/strings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/arrays/arrays/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arrays
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/loops/loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Loops
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/decision-making/decision_making/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decision Making
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/functions/functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/pointers/pointers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pointers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/hello_world/hello_world/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hello World
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intermediate
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Intermediate
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intermediate/algorithms/algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algorithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intermediate/data_structures/dataStructure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Structures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intermediate/enumerations/enumerations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enumerations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intermediate/errors/errors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Errors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intermediate/exceptions/exceptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exceptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intermediate/memory_management/memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Memory Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intermediate/object-oriented-programming/oop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OOP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Streams
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Streams
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intermediate/streams/streams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Streams Intro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intermediate/streams/files/files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Streams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intermediate/structures/structures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Structures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intermediate/templates/templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mastering STL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mastering STL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STL Guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STL Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithms
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pair" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pair
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pair">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-make_pair" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function make_pair()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Containers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequence-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequence Containers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vectors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Queue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deque" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deque
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#associative-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Associative Containers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multiset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multimap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multimap
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unordered-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unordered Containers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unordered-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unordered Set
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unordered-multiset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unordered Multiset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unordered-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unordered Map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unordered-multimap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unordered Multimap
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tuple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tuple
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iterators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Iterators
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Networking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../networking/networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking in C++
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beginner
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Beginner
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/beginer/calculator.cpp" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/beginer/calculator_stl.cpp" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Calculator STL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/beginer/guessNumber.cpp" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guess Number
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/beginer/guessNumberFunc.cpp" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guess Number Func
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intermediate
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Intermediate
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/intermediate/bankManagement.cpp" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bank Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/intermediate/fileEncryption.cpp" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Encryption
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/projets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/books/books/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Books
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/questions/questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/website/website/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Websites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithms
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pair" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pair
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pair">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-make_pair" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function make_pair()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Containers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequence-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequence Containers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vectors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Queue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deque" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deque
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#associative-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Associative Containers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multiset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multimap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multimap
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unordered-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unordered Containers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unordered-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unordered Set
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unordered-multiset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unordered Multiset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unordered-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unordered Map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unordered-multimap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unordered Multimap
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tuple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tuple
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iterators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Iterators
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="mastering-stl">Mastering STL<a class="headerlink" href="#mastering-stl" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="#algorithms">Algorithms</a></li>
+<li><a href="#containers">Containers</a></li>
+<li><a href="#pair">Pair</a></li>
+<li><a href="#sequence-containers">Sequence Containers</a></li>
+<li><a href="#vectors">Vectors</a></li>
+<li><a href="#list">List</a></li>
+<li><a href="#deque">Deque</a></li>
+<li><a href="#associative-containers">Associative Containers</a></li>
+<li><a href="#set">Set</a></li>
+<li><a href="#multiset">Multiset</a></li>
+<li><a href="#map">Map</a></li>
+<li>
+<p><a href="#multimap">Multimap</a></p>
+</li>
+<li>
+<p><a href="#unordered-containers">Unordered Containers</a></p>
+</li>
+<li><a href="#unordered-set">Unordered Set</a></li>
+<li><a href="#unordered-multiset">Unordered Multiset</a></li>
+<li><a href="#unordered-map">Unordered Map</a></li>
+<li><a href="#unordered-multimap">Unordered Multimap</a></li>
+<li><a href="#queue">Queue</a></li>
+<li>
+<p><a href="#tuple">Tuple</a></p>
+</li>
+<li>
+<p><a href="#stack">Stack</a></p>
+</li>
+<li><a href="#functions">Functions</a></li>
+<li><a href="#iterators">Iterators</a></li>
+</ul>
+<p><a name="top"></a></p>
+<h2 id="algorithms">Algorithms<a class="headerlink" href="#algorithms" title="Permanent link">&para;</a></h2>
+<h2 id="pair">Pair<a class="headerlink" href="#pair" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Pair kama jina lilivyo kwamba ndani ya pair huwa na vitu viwili hivyo kwenye STL pair inahifadhi vitu viwili,arrays inahifadhi data ambazo zio za mchanganyiko ila kwa kutumia pair unaweza kuhifadhi data za mchanganyiko mbalimbali kama,<code>string na integer</code> au hata <code>int kwa int</code> hata <code>int kwa double</code>.</li>
+</ul>
+<blockquote>
+<p>Syntax</p>
+</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">pair</span><span class="o">&lt;</span><span class="n">Type1</span><span class="p">,</span><span class="w"> </span><span class="n">Type2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pElement</span><span class="p">;</span>
+</code></pre></div>
+
+<ul>
+<li>Kufanya declaration ya pair lazima <code>utility</code> library iwe included kwa juu kabla ya kufanya declaration,baada ya hapo ndani ya main function anza na <code>pair</code> keyword ikifuatiwa na <code>&lt;&gt;</code> ambapo data type zako zinakaa ndani yake,ambapo hapo chini nitatumia <code>int</code> na <code>string</code> baada ya kufanya hivyo nje ya <code>&gt;</code> tutaacha nafasi na kuweka jina la pair yetu <code>mwanafunzi</code> baada ya hapo,kuna njia na kuweka value za integer na string,unaweza ukaweka moja kwa moja kwamba baada ya jina pair utaweka kitendakazi = (assignment operator) kisha value zako zitakuwa ndani ya {} mabano singasinga ndani ya mabano singa singa kutakuwa na value zako katika mfuatano unaotakiwa mfano,pale juu tumeanza na int hivyo itakuwa hivi <code>{2, "Njox"}</code>.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="w">    </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;utility&gt;</span>
+
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">    </span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mwanafunzi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Njox&quot;</span><span class="p">};</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li>
+<p>Statement kwenye mfano wetu hapo juu,inafanya declaration ya mwanafunzi kuwa object ya aina(type) ya pair. Component ya mwanafuzni ni int; component ya pili ni ya aina ya string.Endapo kama kutakuwa hamna value ambazo zipo kwenye declaration ya mwanafuzni,component ya kwanza na component ya pili zitakuwa initialized na thamani a,bayo ni default na default vaue ni sifuri 0 na kama ni member aina yake itakuwa ni string itakuwa empty.</p>
+</li>
+<li>
+<p>Kuna njia nyingine ya kuzipa value kwenye za data type zako,ilikuweka value kwenye pair yako utaanza na jina la pair ambapo pair yetu ni <code>mwanafunzi</code> kisha dot operator kuweka kupata methods ambazo zipo ndani ya hio pair kama pair ya kwanza inakuwa na method ya <code>.first</code> kama ya pili itakuwa na <code>.second</code>,Angalia mfano hapo chini zaidi!</p>
+</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="w">    </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;utility&gt;</span>
+
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">    </span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mwanafunzi</span><span class="p">;</span>
+<span class="w">    </span><span class="n">mwanafunzi</span><span class="p">.</span><span class="n">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="n">mwanafunzi</span><span class="p">.</span><span class="n">second</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Njox&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li>Njia ya pili ya kuweza  kuweka values zako baada ya kuweka jina la pair yako itafuatiwa na mabano na ndani ya mabano utaweka value zako katika mfuatano ambao umefanya declaration kwa mfano pale juu tulianza na intger ikifuatiwa na string hivyo inatakiwa iwe hivyo.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="w">    </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;utility&gt;</span>
+
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">    </span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mwanafunzi</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Njox&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li>Statement hapo chini inaonesha namna ambayo unaweza kufanya output za value ya object ambayo type yake ni pair</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="w">    </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;utility&gt;</span>
+
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">    </span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mwanafunzi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Njox&quot;</span><span class="p">};</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">mwanafunzi</span><span class="p">.</span><span class="n">first</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">mwanafunzi</span><span class="p">.</span><span class="n">second</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// Output: 12 Njox</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li>Pia ni muhimu kujua kwamba pair inahifadhi data ambazo ni mbili na si vingine,vipi endapo tukijaribu kuweka data zaidi ya mbili?</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="w">    </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;utility&gt;</span>
+
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">    </span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mwanafunzi</span><span class="p">;</span>
+<span class="w">    </span><span class="n">mwanafunzi</span><span class="p">.</span><span class="n">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="n">mwanafunzi</span><span class="p">.</span><span class="n">second</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Njox&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">mwanafunzi</span><span class="p">.</span><span class="n">third</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+
+<p>Endapo tutaongeza member mmoja kwenye pair yetu,tutapata error hii hapo chini kwamba arguments zimezidi,arguments inabidi ziwe 2 tu.</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">too</span><span class="w"> </span><span class="n">many</span><span class="w"> </span><span class="n">arguments</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">template</span><span class="w"> </span><span class="s">&quot;std::pair&quot;</span><span class="n">C</span><span class="o">/</span><span class="n">C</span><span class="o">++</span><span class="p">(</span><span class="mi">443</span><span class="p">)</span>
+<span class="w">    </span><span class="n">wrong</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="k">template</span><span class="w"> </span><span class="n">arguments</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">should</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="n">gcc</span>
+</code></pre></div>
+
+<ul>
+<li>Tunaweza pia tukawa na nested pairs katika STL,kwamba object <code>mwanafunzi</code> ambayo type yake ni pair kunakuwa kwenye component ya pili kunakuwa na pair nyingine ambayo itakuwa ni ya object ambayo ndani ya hiyo pair ya pili ndio kunakuwa na value zako ambapo inaweza ikawa string au integer,ni muhimu kuzingatia jinsi ambavyo value zetu zinakuwa nested kwa sana ndio inakuwa tabu na pia complexity inaongezeka kwenye programu yako.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">mwanafunzi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;Njox&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">}};</span>
+</code></pre></div>
+
+<ul>
+<li>Kupitia mfano hapo juu kuna component wawili tu wa umbile(object) ambapo component wa kwanza ni integer na component wa pili ni pair na huyo component wa pili wa pair object wana value mbili value ya kwanza ni string na ya pili ni integer.Kupata value ya member wa kwanza itakuwa ni <code>mwanafunzi.first</code></li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">mwanafunzi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;Njox&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">}};</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">mwanafunzi</span><span class="p">.</span><span class="n">first</span><span class="p">;</span><span class="w"> </span><span class="c1">// Output: 2</span>
+</code></pre></div>
+
+<p>Kupata thamani ya component ya pili,kumbuka component ya pili ni pair,kupata value ya component ya pili ambayo ni ya kwanza itakuwa hivi.</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">mwanafunzi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;Njox&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">}};</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">mwanafunzi</span><span class="p">.</span><span class="n">second</span><span class="p">.</span><span class="n">first</span><span class="p">;</span><span class="w"> </span><span class="c1">// Output: Njox</span>
+</code></pre></div>
+
+<p>Hapo ni sawa na kuambia program yetu kwanza nenda kwenye object yetu ambayo ni mwanafunzi chukua component ya pili kwenye mwanafunzi object kisha chukua value ya kwanza.</p>
+<p>Kama component ya pili kwenye pair ila value ni ya pili itakuwa hivi.</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">mwanafunzi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;Njox&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">}};</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">mwanafunzi</span><span class="p">.</span><span class="n">second</span><span class="p">.</span><span class="n">second</span><span class="p">;</span><span class="w"> </span><span class="c1">// Output: 20</span>
+</code></pre></div>
+
+<h3 id="function-make_pair">Function make_pair()<a class="headerlink" href="#function-make_pair" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Header file utility pia lina defintion ya function template make_pair.Kwa msaada ya function make_pair, tunaweza kutengeneza pairs pia kuzipa type za pair. Defintion ya function template make_pair inafanana na ifuatayo</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T1</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">T2</span><span class="o">&gt;</span>
+<span class="n">pair</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">make_pair</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">T1</span><span class="o">&amp;</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">T2</span><span class="o">&amp;</span><span class="w"> </span><span class="n">Y</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&gt;</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">Y</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Kutoka kwenye defintion ya function template make_pair, ni wazi kwamba function template make_pair ni value returning function na unarudisha value ya type pair.Component za value ambazo zimerudishwa na function template make_pair inapitishwa kama parameter kwenye function template make_pair.Expression hapo chini!</p>
+<div class="codehilite"><pre><span></span><code><span class="n">make_pair</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Itarudisha value ya aina ya pair.Value ya component ya kwanza ni 75; na value ya component ya pili itakuwa ni character 'A'
+Function <code>make_pair</code> ni muhimu kama pair inatumika kupitishwa kwenye function kama argument.Angalia mfano hapo chini</p>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;utility&gt;</span>
+
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="c1">// create function and pass pair as parameter(pair) to</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">funcExp</span><span class="p">(</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;funcExp: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">first</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">second</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">funcExp</span><span class="p">(</span><span class="n">make_pair</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">));</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Kwenye function hapo juu nimetengeneza function inayoitwa <code>funcExp</code> inachukua parameter pair kama parameter, <code>pair&lt;int, int&gt; x</code>,ndani ya function tunatapata value ambazo zipo kwenye object <code>x</code> ndani ta function tunapass function yetu <code>make_pair(75, 80)</code>.</p>
+<ul>
+<li>Huwa kunakuwa na pair za array katika programm yako declaration inakuwa kawaida tu kwamba linaanza na pair keyword ikifuatiwa na &lt;&gt; ndani yake kunakuwa na data type zako kisha jina la pair yako ila kwenye upande wa array baada ya kundika jina la pair yako itafuatiwa na square brackets na ndani ya mabano kutakuwa na idadi ya members wako ambao inabidi wawe ndani ya array yako,mfano array yangu kama ina members watatu itakuwa hivi <code>arrayName[3]</code> baada ya itafuatiwa na assignment operator ambayo ni = na baadaa ya = itafuatiwa na mabano singasinga ndani ya mabano kutakuwa na values zako katika program yako mfano array yetu ina member watatu hivyo ndani yake itakuwa na member wa kwanza ambae yuko katika index ya zero(sifuri), kesho itafuatiwa na member wa pili ambao wapo index ya 1 na mwisho member 3 ambao wapo index ya 2.Angalia mafano hapo chini!</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">}};</span>
+</code></pre></div>
+
+<p><img alt="Pair array" src="/assets/pair%20array.PNG" /></p>
+<p>Kwenye mfano hapo ni kwamba tumetengeneza pair array ambayo ina value mbalimbali kwenye index ya sifuri kuna value mbili ambazo ni 1 na 2,kwenye index ya kwanza kuna value 2 ambazo ni 3 na 4 kwenye index ya pili kuna value mbili ambazo ni 5 na 6,kumbuka kwamba pair inahifadhi value mbili tu hivyo zinakuwa na member wawili tu kinyume na hapo utapata error!</p>
+<ul>
+<li>Ili uweze kupata access ya value zako kwenye array kama basi kama ni member wa kwanza ina maana tutaanza katika index ya sifuri na kwenye index ya sifuri kupata value zile mbili za object yet,value ya kwanza itakuwa accessed kwa kutumia dot operator ikifuatiwa na first na value ya pili tutatumia dot operator ikifuatiwa na second function,angalia mfano hapo chini.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">}};</span>
+
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Fist Element kwenye index ya 0 ni: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">first</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Second Element kwenye index ya 0 ni: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">second</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/*</span>
+<span class="cm">    Fist Element kwenye index ya 0 ni: 1</span>
+<span class="cm">    Second Element kwenye index ya 0 ni: 2</span>
+<span class="cm">    */</span>
+</code></pre></div>
+
+<p>Task yako ni kuandika program ambayo itaweza kupata value ya array kwenye index ya pili ikiwa na element ya kwanza na ya pili,na array katika index ya kwanza ikiwa na element ya kwanza na ya pili</p>
+<p>Kujifunza vizuri namna pair zinafanya kazi pitia <a href="/C++%20Learning-lab/projects/mastering_stl/calculator_stl.cpp">project hii</a></p>
+<h2 id="containers">Containers<a class="headerlink" href="#containers" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Container zinatumika manage umbile(object) za aina fulani.STL Containers zimegawanyika katika categories nne ambazo ni:</li>
+<li>Sequence Containers(Sequantial)</li>
+<li>Associative Containers</li>
+<li>Container Adapter</li>
+</ul>
+<h2 id="sequence-containers">Sequence Containers<a class="headerlink" href="#sequence-containers" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Kila umbile(object) katika sequence(mfuatano) lina sehemu(position) yake maalumu,pia mpangilio wa element unakuwa maintained kwa namna ambavyo unakuwa umehifadhiwa.Mfano wa sequence containers ni vectors, list na deque.Karibia kila sequence containers zina aina moja ya operesheni ambayo unaweza ukafanya kwa ajili ya manipulation.</li>
+</ul>
+<h2 id="vectors">Vectors<a class="headerlink" href="#vectors" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Vector zinahifadhi na pia zina manage objects zake katika dynamic array.Kwa sababu array ni random data structure,element za array unaweza ukazipata randomly.Kuweka item katiakati au mwanzoni katika array inatumia muda hususani kama array yako ni kubwa,lakini, kuweka data(item) mwishoni ni haraka zaidi. Jina la class ambayo inafanya implementation ya vector container ni vector.Jina la header file  ambalo lina class <code>vector</code> ni vector,Hivyo, kutumia vector container katika program,program lazima header file <code>#include &lt;vector&gt;</code> liwe included juu kabisa!</p>
+</li>
+<li>
+<p>Kabla hujapitia kipande hichi hakikisha umepitia <a href="/C++%20Learning-lab/intermediate/data_structures/">hapa</a>, vector zipo faster zaidi ya array na ili uweze kutumia vector ni muhimu kuweka header kwa ajili ya vector yako.Ni muhimu kuzangatia kwamba kama hujui idadi ya data zako ambazo unataka ziingie katika program yako ni vizuri kutumia vector badala ya array kwanini? Ili kutumia array ni muhimu kuzingatia kwamba je ni kiasi gani cha data unataka ziwe ndani ya array yako mfano kama array yako inadata za wanafunzi mfanon wako 4 itakuwa hivi</p>
+</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">studentsMark</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">56</span><span class="p">,</span><span class="w"> </span><span class="mi">79</span><span class="p">,</span><span class="w"> </span><span class="mi">87</span><span class="p">};</span>
+</code></pre></div>
+
+<p>Vipi endapo hatujui idadi ya members wako ambao wapo ndania array yako itakuwa hivi!</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">studentsMark</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">56</span><span class="p">,</span><span class="w"> </span><span class="mi">79</span><span class="p">,</span><span class="w"> </span><span class="mi">87</span><span class="p">};</span>
+</code></pre></div>
+
+<p>Ila shida inapokuja kwenye program yetu hapo juu ni kwenye upade wa <a href="/C++%20Learning-lab/intermediate/memory_management/memory.md">memory management</a> kwamba interpreter ikiona kwenye program yetu tumeandika kitu kama hicho inachofanya inaenda kufanya allocation ya nafasi kwenye memory ila interpreter yetu nayo haijui kwamba je ni kiasi gani cha memory kinachohitajila kwa ajili ya array yetu ambapo inapelekea interpretr nufanya allocation kubwa ya memory na memory hiyo inaweza isitumike ikapelekea memory leak kwahiyo kwenye kitu kama hichi katika program yetu tatuzi ya hili tatizo ni kutumia vector.</p>
+<ul>
+<li>Kufanya declaration ya vector utaanza neno vector ikifuatiwa na alama ya &lt;&gt; ndani yake tunaweka aina ya data mabyo inabidi iwe ndani yake,mfano unaweza ikawa int,double hata string nje ya &lt;&gt; tunaweka jina la vector yako.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">wanafunzi</span><span class="p">;</span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Hapo juu tumefanya declaration ya vector ambayo ni wanafunzi ikiwa ni ya type integer.Tumefanya declaration ya vector yetu ya kwanza inaitwa wanafunzi ya pili inaitwa name ila zote vectors zetu hazina value yeyote,kwa njia rahisi tunaweza weka value katika njia zifuatazo.</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">name</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s">&quot;Njox&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// {&quot;Njox&quot;, &quot;Njox&quot;, &quot;Njox&quot;, &quot;Njox&quot;, &quot;Njox&quot;}</span>
+</code></pre></div>
+
+<p>Hapo vector yetu name imekuwa declared ikiwa na mabano na nadni ya mabano kuna 5 na neno "Njox" hapo ni sawa kwamba vectors 5 zimekuwa initialized na zote zikiwa na value ya "Njox",ili kuweza kutengeneza copy ya vector moja kwa nyingine ni rahisi,unahitaji kufanya declaration ya vector moja(ambayo unataka ikopiwe) kisha declaration ya vector nyingine ambayo inakopi kutoka kwenye array ya kwanza,angalia mfano hapo chini!</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v1</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v2</span><span class="p">(</span><span class="n">v1</span><span class="p">);</span>
+</code></pre></div>
+
+<ul>
+<li>
+<p>Sasa tumejua jinsi ya kufanya decalartion ya vector katika kipande cha sequence container,sasa ngoja tujue jinsi ya kufanya manipulation ya data ambazo zimehifadhiwa katika vector.Kufanya hivyo inabidi ujue basic operesheni zifuatazo!</p>
+</li>
+<li>
+<p>Item Insertion</p>
+</li>
+<li>Item Deletion</li>
+<li>Stepping through the elements of a vector container</li>
+<li>
+<p>Operesheni zinatotumika kupata access ya element za vector container.</p>
+</li>
+<li>
+<p><code>vectorName.at(index)</code>- Inarudisha element katika position ambayo imekuwa specified kutokana na index.</p>
+</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>
+</code></pre></div>
+
+<p>2.<code>vectorName[index]</code>- Inarudisha element katika position ambayo imekuwa specified kutokana na index.</p>
+<div class="codehilite"><pre><span></span><code>
+</code></pre></div>
+
+<p>3.<code>vectorName.front()</code>- Inarudisha element ya kwanza katika vector.</p>
+<div class="codehilite"><pre><span></span><code>
+</code></pre></div>
+
+<p>4.<code>vectorName.back()</code>- Inarudisha element ya mwisho katika vector.</p>
+<div class="codehilite"><pre><span></span><code>
+</code></pre></div>
+
+<ul>
+<li>
+<p>Vector ya kwanza imekuwa declared na kuwa initialized ikiwa na element 5 zote zikiwa na value ya 20,na vector ya pili ambayo ni v2 imekuwa declared ila imekopi values za array ya v1 katika program yako.</p>
+</li>
+<li>
+<p>Ili kuweza kuweka values ndani ya vector yako kuna njia mbalimbali ila kuna method inaitwa <code>.pushBack()</code> na hata pia <code>.emplace_back()</code> ndani ya mabano tunapitisha value zako.</p>
+</li>
+<li>
+<p><code>push_back()</code> function inachofanya inaingiza value ambayo umeweka kwenye mabano kwenda kwenye value yako pia kuna <code>emplace_back()</code> nayo pia inaweka value mwishoni mwa vector yako ila kuna utofauti ulipo kati ya push_back na emplace_back,emplace_back ipo haraka ukifananisha na push_back katika vector.</p>
+</li>
+<li>
+<p>Kwenye upande wa vector pia unaweza kutengeneza pair ya vector,kwa declaration ya pair yako inakuwa hivi <code>pair&lt;int int&gt;pairName</code> ila declaration ya vector inakuwa hivi <code>vector&lt;int&gt; vectorName</code> kinchobadilika ni kwamba badala ya ile data type yako ambayo ni int kwenye vector unabadili na kuweka declaration ya pair yako <code>vector&lt;pair&lt;int, int&gt;&gt; vec;</code></p>
+</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">vec</span><span class="p">;</span>
+</code></pre></div>
+
+<h2 id="list">List<a class="headerlink" href="#list" title="Permanent link">&para;</a></h2>
+<h2 id="queue">Queue<a class="headerlink" href="#queue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Queue ni sawa na stack ila utofauti wao ni kwamba queue inatumia FIFO Algorith(First In First Out),Kufanya declaration ya queue unaanza na </li>
+</ul>
+<h2 id="deque">Deque<a class="headerlink" href="#deque" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Deque ni moja kati ya sequenc containers katika STL,deque inasimama badala ya double ended queue.Deque containers zinakuwa implemented kama dynamic arrays katika namna elements zinakuwa inserted katika both ends.Deque zinaweza expand katika pande yeyote,insertion mwishoni,katikati zipo haraka.Insertion katikati zinatumia muda kwa sababu element katika katika queue zinahitaji ziwe shifted.Jina la class ambalo linafanya definition ya deque container ni deque,class deque na function ya kufanya implementation ya operesheni ambazo ziko kwenye deque object,pia zipo kwenye header file deque.Hivyo kuweza kutumia seque container katika program inabidi header file iwe included.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;deque&gt;</span>
+</code></pre></div>
+
+<ul>
+<li>Kufanya declaration ya qeque kwenye program yako utaanza na deque keyword ikifuatiwa na &lt;&gt; ndani yake kunakuwa na aina ya data nje ya &lt;&gt; utaweka jina la deque yako.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">deque</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dq</span><span class="p">;</span>
+</code></pre></div>
+
+<h2 id="associative-containers">Associative Containers<a class="headerlink" href="#associative-containers" title="Permanent link">&para;</a></h2>
+<h2 id="set">Set<a class="headerlink" href="#set" title="Permanent link">&para;</a></h2>
+<h2 id="multiset">Multiset<a class="headerlink" href="#multiset" title="Permanent link">&para;</a></h2>
+<h2 id="map">Map<a class="headerlink" href="#map" title="Permanent link">&para;</a></h2>
+<h2 id="multimap">Multimap<a class="headerlink" href="#multimap" title="Permanent link">&para;</a></h2>
+<h2 id="unordered-containers">Unordered Containers<a class="headerlink" href="#unordered-containers" title="Permanent link">&para;</a></h2>
+<h2 id="unordered-set">Unordered Set<a class="headerlink" href="#unordered-set" title="Permanent link">&para;</a></h2>
+<h2 id="unordered-multiset">Unordered Multiset<a class="headerlink" href="#unordered-multiset" title="Permanent link">&para;</a></h2>
+<h2 id="unordered-map">Unordered Map<a class="headerlink" href="#unordered-map" title="Permanent link">&para;</a></h2>
+<h2 id="unordered-multimap">Unordered Multimap<a class="headerlink" href="#unordered-multimap" title="Permanent link">&para;</a></h2>
+<h2 id="tuple">Tuple<a class="headerlink" href="#tuple" title="Permanent link">&para;</a></h2>
+<h2 id="stack">Stack<a class="headerlink" href="#stack" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Stack inafanya kazi kwa kutumia algorithm ya LIFO(Last in First Out),kwamba element ambayo itakuwa ya mwisho kuwa added ndio itakuwa ya kwanza kutolewa.Declaration ya stack unaanza na stack keyword kisha &lt;&gt; ndani ya &lt;&gt; inakaa data type kisha nje ya &lt;&gt; inafuata jina la stack yako,usisahau kuweka header yako <code>##include &lt;stack&gt;</code>.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">st</span><span class="p">;</span>
+</code></pre></div>
+
+<ul>
+<li>
+<p>Ili kuweza kufanya baadhi ya operation kwenye stack yako kuna methods 7 tu, <strong>emplace, push, empty, pop, top, size, swap</strong></p>
+</li>
+<li>
+<p>push: Hapo tu tumefanya declaration ya stack yetu ila iko empty hivyo kama tunataka tuweke value kwenye stack yetu tutaumia method ya <code>push()</code> ndani ya mabano tunaweka value ya data.Mfano,kupitia mfano inakuwa kwamba ndani ya stack yetu kunakuwa na value yetu ambayo ni 1.</p>
+</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">st</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// {1}</span>
+</code></pre></div>
+
+<ul>
+<li>emplace:emplace ni sawa na push ila utofauti wake ni kwamba emplace ipo haraka ukifananisha na push kwenye stacks.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">st</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="c1">// {2, 1}</span>
+</code></pre></div>
+
+<ul>
+<li>empty:empty inatumika kuangalia kama stack yako ipo tupu au laa,mfano tunaweza tukatumia .empty kuangalia kama stack ina kitu ndani au hamna na kama hamna tunaweza ukapush value kwenye stack yetu.Kumbuka kwenye C++ kama jibu ni false inarudisha 0 na kama ni true inarudisha 1 kumbuka mwanzoni nilielekeza namna jinsi ya kutumia <code>boolalpha</code> kama umesahahu kapitie tena!</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stack&gt;</span>
+
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">st</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">st</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">true</span><span class="p">)</span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Stack is empty!&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The last element added into a stack: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li>pop:pop() inatumika kutoa element ya mwisho kabisa ambayo imekuwa added kwenye stack yetu.Mfano</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>
+</code></pre></div>
+
+<ul>
+<li>top:top inarudisha value ya mwisho kuwekwa kwenye stack yako.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">st</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// push</span>
+<span class="w">    </span><span class="n">st</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// {1}</span>
+
+<span class="w">    </span><span class="c1">// emplace</span>
+<span class="w">    </span><span class="n">st</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="c1">// {2, 1}</span>
+
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">();</span><span class="w"> </span><span class="c1">// output: 2</span>
+</code></pre></div>
+
+<p>Mwanzoni kabisa tulifanya declaration hii <code>stack&lt;int&gt; st;</code> kisha tunapush 1 na emplace 2 hivyo stack yetu itakuwa hivi <code>{2, 1}</code> kwa hiyo top inachofanya inatoa output ya value ya mwisho kuwa added kwenye stack yetu hivo 2 endapo tutatumia <code>s.pop()</code> value ya mwisho kuwa added itatolewa na hivo baada ya hapo tukijaribu <code>cout &lt;&lt; s.top()</code> tutapata 1 kwa sababu 2 imetolewa kwenye stack yetu,Zingatia hilo! Mfano</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">st</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// push</span>
+<span class="w">    </span><span class="n">st</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// {1}</span>
+
+<span class="w">    </span><span class="c1">// emplace</span>
+<span class="w">    </span><span class="n">st</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="c1">// {2, 1}</span>
+
+<span class="w">    </span><span class="c1">// pop(removes the last element to be added into a stack)</span>
+<span class="w">    </span><span class="n">st</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">();</span><span class="w"> </span><span class="c1">// output: 1</span>
+</code></pre></div>
+
+<ul>
+<li>size: inarudisha idadi ya element ambazo zipo kwenye stack.Mfano hapo chini baada ya kufanya declaration ya stack <code>st</code> tumepush 23 kwenda kwenye stack yetu na ndio ipo 23 tu ndani ya stack.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">st</span><span class="p">;</span>
+<span class="w">    </span><span class="n">st</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">23</span><span class="p">);</span><span class="w"> </span><span class="c1">// {1}</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">st</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// Output: 1</span>
+</code></pre></div>
+
+<ul>
+<li>swap:Kama ambazo neno linsema swap unaweza swap values za stack moja kwenda kwenye stack nyingine kwenye program yako.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">st1</span><span class="p">,</span><span class="w"> </span><span class="n">st2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">st1</span><span class="p">.</span><span class="n">swap</span><span class="p">(</span><span class="n">st2</span><span class="p">);</span>
+</code></pre></div>
+
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
+<h2 id="iterators">Iterators<a class="headerlink" href="#iterators" title="Permanent link">&para;</a></h2>
+<p><a href="#top">⬆️ Return to Top</a></p>
+<!-- # Mastering the Standard Template Library (STL) in C++
+
+## Introduction to STL
+- Brief overview of what the STL is and its importance in C++
+- Why understanding the STL is crucial for C++ developers
+
+## Containers
+- Explanation of containers in the STL
+  - `vector`
+  - `list`
+  - `deque`
+  - `set` and `multiset`
+  - `map` and `multimap`
+- When to use each container based on use cases
+- Common operations and member functions for each container
+
+## Iterators
+- Introduction to iterators and their role in STL
+- Types of iterators (input, output, forward, bidirectional, random access)
+- Examples of iterating through different containers using iterators
+
+## Algorithms
+- Overview of algorithms provided by the STL
+- Categorization of algorithms (sorting, searching, modifying, etc.)
+- Commonly used algorithms with examples
+  - `sort`
+  - `find`
+  - `binary_search`
+  - `transform`
+  - `accumulate`
+- How to use algorithms with different containers
+
+## Functors and Lambdas
+- Explanation of functors (function objects) and how they work
+- Introduction to lambdas and their advantages
+- Examples of defining and using functors and lambdas with algorithms
+
+## Custom Data Structures
+- Creating custom data structures compatible with the STL
+- Examples of custom data structures (e.g., priority queue, custom comparator)
+- How to use custom data structures with STL algorithms and containers
+
+## Best Practices and Tips
+- STL best practices for efficient and clean code
+- Tips for choosing the right container or algorithm
+- Performance considerations and trade-offs
+- Error handling and common pitfalls to avoid
+
+## Resources
+- Recommended books, websites, and online resources for further learning
+- Links to additional tutorials or exercises
+- Community forums or groups for discussing STL and C++ topics
+
+## Conclusion
+- Recap of key points learned about mastering the STL
+- Encouragement to practice and explore more on your own
+- Thanking contributors and supporters of the Cpp-Learning-Lab
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Njoxpy/Cpp-Learning-lab" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
