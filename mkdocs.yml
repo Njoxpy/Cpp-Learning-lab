@@ -1,0 +1,70 @@
+site_name: C++ Learning Lab
+site_description: Learn C++ from basics to advanced
+site_author: Njox
+repo_url: https://github.com/Njoxpy/Cpp-Learning-lab
+nav:
+  - Home: index.md
+  - Basics:
+      - Introduction: basics/introduction/introduction.md
+      - Variables: basics/variables/variables.md
+      - Data Types: basics/Data Type/data_types.md
+      - Input Handling: basics/input_handling/input_handling.md
+      - Strings: basics/strings/strings.md
+      - Arrays: basics/arrays/arrays.md
+      - Loops: basics/loops/loops.md
+      - Decision Making: basics/decision-making/decision_making.md
+      - Functions: basics/functions/functions.md
+      - Pointers: basics/pointers/pointers.md
+      - Hello World: basics/hello_world/hello_world.md
+  - Intermediate:
+      - Algorithms: intermediate/algorithms/algorithms.md
+      - Data Structures: intermediate/data_structures/dataStructure.md
+      - Enumerations: intermediate/enumerations/enumerations.md
+      - Errors: intermediate/errors/errors.md
+      - Exceptions: intermediate/exceptions/exceptions.md
+      - Memory Management: intermediate/memory_management/memory.md
+      - OOP: intermediate/object-oriented-programming/oop.md
+      - Streams:
+          - Streams Intro: intermediate/streams/streams.md
+          - File Streams: intermediate/streams/files/files.md
+      - Structures: intermediate/structures/structures.md
+      - Templates: intermediate/templates/templates.md
+  - Advanced:
+      - Overview: advanced/index.md
+  - Mastering STL:
+      - STL Guide: mastering-STL/stl.md
+  - Networking:
+      - Networking in C++: networking/networking.md
+  - Projects:
+      - Beginner:
+          - Calculator: projects/beginer/calculator.cpp
+          - Calculator STL: projects/beginer/calculator_stl.cpp
+          - Guess Number: projects/beginer/guessNumber.cpp
+          - Guess Number Func: projects/beginer/guessNumberFunc.cpp
+      - Intermediate:
+          - Bank Management: projects/intermediate/bankManagement.cpp
+          - File Encryption: projects/intermediate/fileEncryption.cpp
+      - Notes: projects/projets.md
+  - Resources:
+      - Books: resources/books/books.md
+      - Questions: resources/questions/questions.md
+      - Websites: resources/website/website.md
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Njoxpy/Cpp-Learning-lab
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - content.tabs.link
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+  - tables
+  - footnotes

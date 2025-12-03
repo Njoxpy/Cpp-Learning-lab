@@ -5,3 +5,39 @@ assets/Thumbs.db
 output
 *.txt
 *.exe
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node (only if you use tooling like npm, vite, webpack)
+node_modules/
+dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor configs
+.vscode/
+.idea/
+
+# Env files (if any)
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor configs
+.vscode/
+.idea/
+
+
+site/
+.sass-cache/
+.cache/
+site/.cache/    
