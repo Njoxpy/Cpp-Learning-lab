@@ -1,6 +1,6 @@
 # C++ Learning Lab
 
-![C++ Logo](/assets/C++.png)
+![alt text](../assets/C++.png)
 
 Welcome to the C++ Learning Lab repository!
 
